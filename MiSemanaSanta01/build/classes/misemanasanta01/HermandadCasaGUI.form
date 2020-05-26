@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="2"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jButtonAceptar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jButtonSalir" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel2" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jComboCristo" pref="522" max="32767" attributes="0"/>
+                          <Component id="jComboVirgen" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel3" min="-2" pref="221" max="-2" attributes="0"/>
+                      <EmptySpace pref="42" max="32767" attributes="0"/>
+                      <Component id="jComboVirgen1" min="-2" pref="431" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel1" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="jComboCristo" min="-2" max="-2" attributes="0"/>
+                  <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel2" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="jComboVirgen" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel3" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="jComboVirgen1" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="273" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButtonSalir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonAceptar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="jButtonSalir">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="SALIR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSalirActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Advocaci&#xf3;n Crist&#xed;fera:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboCristo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="132">
+            <StringItem index="0" value="Dios Hijo en su Sant&#xed;sima Trinidad"/>
+            <StringItem index="1" value="Dulce Nombre de Jes&#xfa;s"/>
+            <StringItem index="2" value="Nuestro Padre Jes&#xfa;s Buen Pastor"/>
+            <StringItem index="3" value="Nuestro Padre Jes&#xfa;s Ca&#xed;do"/>
+            <StringItem index="4" value="Nuestro Padre Jes&#xfa;s Cautivo"/>
+            <StringItem index="5" value="Nuestro Padre Jes&#xfa;s Cautivo en su Soledad"/>
+            <StringItem index="6" value="Nuestro Padre Jes&#xfa;s de la Amargura"/>
+            <StringItem index="7" value="Nuestro Padre Jes&#xfa;s de la Bendici&#xf3;n"/>
+            <StringItem index="8" value="Nuestro Padre Jes&#xfa;s de la Bendici&#xf3;n en el Santo Encuentro"/>
+            <StringItem index="9" value="Nuestro Padre Jes&#xfa;s de la Ca&#xed;da"/>
+            <StringItem index="10" value="Nuestro Padre Jes&#xfa;s de la Caridad"/>
+            <StringItem index="11" value="Nuestro Padre Jes&#xfa;s de la Columna"/>
+            <StringItem index="12" value="Nuestro Padre Jes&#xfa;s de la Concordia"/>
+            <StringItem index="13" value="Nuestro Padre Jes&#xfa;s de la Esperanza"/>
+            <StringItem index="14" value="Nuestro Padre Jes&#xfa;s de la Fe en su Sagrada Cena"/>
+            <StringItem index="15" value="Nuestro Padre Jes&#xfa;s de la Humildad"/>
+            <StringItem index="16" value="Nuestro Padre Jes&#xfa;s de la Humillaci&#xf3;n"/>
+            <StringItem index="17" value="Nuestro Padre Jes&#xfa;s de la Meditaci&#xf3;n"/>
+            <StringItem index="18" value="Nuestro Padre Jes&#xfa;s de la Misericordia"/>
+            <StringItem index="19" value="Nuestro Padre Jes&#xfa;s de la Oraci&#xf3;n en el Huerto"/>
+            <StringItem index="20" value="Nuestro Padre Jes&#xfa;s de la Paciencia"/>
+            <StringItem index="21" value="Nuestro Padre Jes&#xfa;s de la Pasi&#xf3;n"/>
+            <StringItem index="22" value="Nuestro Padre Jes&#xfa;s de la Paz"/>
+            <StringItem index="23" value="Nuestro Padre Jes&#xfa;s de la Piedad"/>
+            <StringItem index="24" value="Nuestro Padre Jes&#xfa;s de la Resurrecci&#xf3;n"/>
+            <StringItem index="25" value="Nuestro Padre Jes&#xfa;s de la Sagrada Entrada en Jerusal&#xe9;n"/>
+            <StringItem index="26" value="Nuestro Padre Jes&#xfa;s de la Salud y Buen Viaje"/>
+            <StringItem index="27" value="Nuestro Padre Jes&#xfa;s de la Salud y Clemencia"/>
+            <StringItem index="28" value="Nuestro Padre Jes&#xfa;s de la Salud y Remedios"/>
+            <StringItem index="29" value="Nuestro Padre Jes&#xfa;s de la Santa Faz"/>
+            <StringItem index="30" value="Nuestro Padre Jes&#xfa;s de la Sentencia"/>
+            <StringItem index="31" value="Nuestro Padre Jes&#xfa;s de la Soledad"/>
+            <StringItem index="32" value="Nuestro Padre Jes&#xfa;s de la Victoria"/>
+            <StringItem index="33" value="Nuestro Padre Jes&#xfa;s de las Cadenas"/>
+            <StringItem index="34" value="Nuestro Padre Jes&#xfa;s de las Penas"/>
+            <StringItem index="35" value="Nuestro Padre Jes&#xfa;s de los Afligidos"/>
+            <StringItem index="36" value="Nuestro Padre Jes&#xfa;s de los Reyes"/>
+            <StringItem index="37" value="Nuestro Padre Jes&#xfa;s del Buen Suceso"/>
+            <StringItem index="38" value="Nuestro Padre Jes&#xfa;s del Calvario"/>
+            <StringItem index="39" value="Nuestro Padre Jes&#xfa;s del Divino Perd&#xf3;n"/>
+            <StringItem index="40" value="Nuestro Padre Jes&#xfa;s del Ecce Homo"/>
+            <StringItem index="41" value="Nuestro Padre Jes&#xfa;s del Gran Poder"/>
+            <StringItem index="42" value="Nuestro Padre Jes&#xfa;s del Lignum Crucis"/>
+            <StringItem index="43" value="Nuestro Padre Jes&#xfa;s del Mayor Dolor"/>
+            <StringItem index="44" value="Nuestro Padre Jes&#xfa;s del Milagro"/>
+            <StringItem index="45" value="Nuestro Padre Jes&#xfa;s del Monte Calvario"/>
+            <StringItem index="46" value="Nuestro Padre Jes&#xfa;s del Prendimiento"/>
+            <StringItem index="47" value="Nuestro Padre Jes&#xfa;s del Rescate"/>
+            <StringItem index="48" value="Nuestro Padre Jes&#xfa;s del Santo Entierro"/>
+            <StringItem index="49" value="Nuestro Padre Jes&#xfa;s del Santo Sepulcro"/>
+            <StringItem index="50" value="Nuestro Padre Jes&#xfa;s del Santo Suplicio"/>
+            <StringItem index="51" value="Nuestro Padre Jes&#xfa;s del Silencio"/>
+            <StringItem index="52" value="Nuestro Padre Jes&#xfa;s del Soberano Poder"/>
+            <StringItem index="53" value="Nuestro Padre Jes&#xfa;s de Medinaceli"/>
+            <StringItem index="54" value="Nuestro Padre Jes&#xfa;s de Nazaret"/>
+            <StringItem index="55" value="Nuestro Padre Jes&#xfa;s Descendido en el Misterio de su Sagrada Mortaja"/>
+            <StringItem index="56" value="Nuestro Padre Jes&#xfa;s Despojado de sus Vestiduras"/>
+            <StringItem index="57" value="Nuestro Padre Jes&#xfa;s Divino Maestro"/>
+            <StringItem index="58" value="Nuestro Padre Jes&#xfa;s Divino Obrero"/>
+            <StringItem index="59" value="Nuestro Padre Jes&#xfa;s Divino Redentor"/>
+            <StringItem index="60" value="Nuestro Padre Jes&#xfa;s Divino Salvador"/>
+            <StringItem index="61" value="Nuestro Padre Jes&#xfa;s Humilde en la Coronaci&#xf3;n de Espinas"/>
+            <StringItem index="62" value="Nuestro Padre Jes&#xfa;s Nazareno"/>
+            <StringItem index="63" value="Nuestro Padre Jes&#xfa;s Presentado al Pueblo"/>
+            <StringItem index="64" value="Precios&#xed;sima Sangre de Nuestro Se&#xf1;or Jesucristo"/>
+            <StringItem index="65" value="Sagrado Coraz&#xf3;n de Jes&#xfa;s"/>
+            <StringItem index="66" value="Sant&#xed;simo Cristo Coronado de Espinas"/>
+            <StringItem index="67" value="Sant&#xed;simo Cristo de &#xc1;nimas"/>
+            <StringItem index="68" value="Sant&#xed;simo Cristo de Burgos"/>
+            <StringItem index="69" value="Sant&#xed;simo Cristo de Gracia"/>
+            <StringItem index="70" value="Sant&#xed;simo Cristo de Jerusal&#xe9;n"/>
+            <StringItem index="71" value="Sant&#xed;simo Cristo de la Agon&#xed;a"/>
+            <StringItem index="72" value="Sant&#xed;simo Cristo de la Buena Muerte"/>
+            <StringItem index="73" value="Sant&#xed;simo Cristo de la Caridad"/>
+            <StringItem index="74" value="Sant&#xed;simo Cristo de la Circuncisi&#xf3;n"/>
+            <StringItem index="75" value="Sant&#xed;simo Cristo de la Clemencia"/>
+            <StringItem index="76" value="Sant&#xed;simo Cristo de la Conversi&#xf3;n"/>
+            <StringItem index="77" value="Sant&#xed;simo Cristo de la Corona"/>
+            <StringItem index="78" value="Sant&#xed;simo Cristo de la Crucifixi&#xf3;n"/>
+            <StringItem index="79" value="Sant&#xed;simo Cristo de la Escucha"/>
+            <StringItem index="80" value="Sant&#xed;simo Cristo de la Esperanza"/>
+            <StringItem index="81" value="Sant&#xed;simo Cristo de la Exaltaci&#xf3;n"/>
+            <StringItem index="82" value="Sant&#xed;simo Cristo de la Expiraci&#xf3;n"/>
+            <StringItem index="83" value="Sant&#xed;simo Cristo de la Fe"/>
+            <StringItem index="84" value="Sant&#xed;simo Cristo de la Fundaci&#xf3;n"/>
+            <StringItem index="85" value="Sant&#xed;simo Cristo de la Humildad"/>
+            <StringItem index="86" value="Sant&#xed;simo Cristo de la Indulgencia"/>
+            <StringItem index="87" value="Sant&#xed;simo Cristo de La Laguna"/>
+            <StringItem index="88" value="Sant&#xed;simo Cristo de la Lanzada"/>
+            <StringItem index="89" value="Sant&#xed;simo Cristo de la Luz"/>
+            <StringItem index="90" value="Sant&#xed;simo Cristo con la Cruz al Hombro"/>
+            <StringItem index="91" value="Sant&#xed;simo Cristo de la Providencia"/>
+            <StringItem index="92" value="Sant&#xed;simo Cristo de la Redenci&#xf3;n"/>
+            <StringItem index="93" value="Sant&#xed;simo Cristo de la Salud"/>
+            <StringItem index="94" value="Sant&#xed;simo Cristo del Sudor"/>
+            <StringItem index="95" value="Sant&#xed;simo Cristo de la Salvaci&#xf3;n"/>
+            <StringItem index="96" value="Sant&#xed;simo Cristo de la Sangre"/>
+            <StringItem index="97" value="Sant&#xed;simo Cristo de la Sed"/>
+            <StringItem index="98" value="Sant&#xed;simo Cristo de la Vera+Cruz"/>
+            <StringItem index="99" value="Sant&#xed;simo Cristo de la Victoria"/>
+            <StringItem index="100" value="Sant&#xed;simo Cristo de las Aguas"/>
+            <StringItem index="101" value="Sant&#xed;simo Cristo de las Almas"/>
+            <StringItem index="102" value="Sant&#xed;simo Cristo de las Cinco Llagas"/>
+            <StringItem index="103" value="Sant&#xed;simo Cristo de las Injurias"/>
+            <StringItem index="104" value="Sant&#xed;simo Cristo de las Misericordias"/>
+            <StringItem index="105" value="Sant&#xed;simo Cristo de las Penas"/>
+            <StringItem index="106" value="Sant&#xed;simo Cristo de las Siete Palabras"/>
+            <StringItem index="107" value="Sant&#xed;simo Cristo de las Tres Ca&#xed;das"/>
+            <StringItem index="108" value="Sant&#xed;simo Cristo de los Desagravios"/>
+            <StringItem index="109" value="Sant&#xed;simo Cristo de los Dolores y Agon&#xed;a"/>
+            <StringItem index="110" value="Sant&#xed;simo Cristo de los Favores"/>
+            <StringItem index="111" value="Sant&#xed;simo Cristo de los Milagros"/>
+            <StringItem index="112" value="Sant&#xed;simo Cristo del Amor"/>
+            <StringItem index="113" value="Sant&#xed;simo Cristo del Buen Fin"/>
+            <StringItem index="114" value="Sant&#xed;simo Cristo del Consuelo"/>
+            <StringItem index="115" value="Sant&#xed;simo Cristo del Crucifijo"/>
+            <StringItem index="116" value="Sant&#xed;simo Cristo del Desamparo y Abandono"/>
+            <StringItem index="117" value="Sant&#xed;simo Cristo del Descendimiento"/>
+            <StringItem index="118" value="Sant&#xed;simo Cristo del Mayor Dolor"/>
+            <StringItem index="119" value="Sant&#xed;simo Cristo del Perd&#xf3;n"/>
+            <StringItem index="120" value="Sant&#xed;simo Cristo del Remedio de &#xc1;nimas"/>
+            <StringItem index="121" value="Sant&#xed;simo Cristo del Trabajo"/>
+            <StringItem index="122" value="Sant&#xed;simo Cristo del V&#xed;a Crucis"/>
+            <StringItem index="123" value="Sant&#xed;simo Cristo de Pasi&#xf3;n y Muerte"/>
+            <StringItem index="124" value="Sant&#xed;simo Cristo de San Agust&#xed;n"/>
+            <StringItem index="125" value="Sant&#xed;simo Cristo Resucitado"/>
+            <StringItem index="126" value="Sant&#xed;simo Cristo Rey"/>
+            <StringItem index="127" value="Sant&#xed;simo Cristo Var&#xf3;n de Dolores"/>
+            <StringItem index="128" value="Sant&#xed;simo Cristo Yacente"/>
+            <StringItem index="129" value="Santo Cristo de la Misi&#xf3;n"/>
+            <StringItem index="130" value="Santo Cristo del Mayor Dolor"/>
+            <StringItem index="131" value="Transfiguraci&#xf3;n de Nuestro Se&#xf1;or Jesucristo"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboCristoActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Advocaci&#xf3;n Mariana:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboVirgen">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="141">
+            <StringItem index="0" value="Divina Pastora de las Almas"/>
+            <StringItem index="1" value="Divina Pastora de San Dionisio"/>
+            <StringItem index="2" value="Dolorosa de Luj&#xe1;n P&#xe9;rez"/>
+            <StringItem index="3" value="Madre de Dios de la Misericordia"/>
+            <StringItem index="4" value="Mar&#xed;a Sant&#xed;sima de Araceli"/>
+            <StringItem index="5" value="Mar&#xed;a Sant&#xed;sima de la Esperanza"/>
+            <StringItem index="6" value="Mar&#xed;a Sant&#xed;sima de la Esperanza Macarena"/>
+            <StringItem index="7" value="Mar&#xed;a Sant&#xed;sima del Mayor Dolor"/>
+            <StringItem index="8" value="Nuestra Se&#xf1;ora de Abona"/>
+            <StringItem index="9" value="Nuestra Se&#xf1;ora de Atocha"/>
+            <StringItem index="10" value="Nuestra Se&#xf1;ora de Aldeaso&#xf1;a"/>
+            <StringItem index="11" value="Nuestra Se&#xf1;ora de Alharilla"/>
+            <StringItem index="12" value="Nuestra Se&#xf1;ora de Bego&#xf1;a&#x200b;"/>
+            <StringItem index="13" value="Nuestra Se&#xf1;ora de Butarque"/>
+            <StringItem index="14" value="Nuestra Se&#xf1;ora de Castrotierra&#x200b;"/>
+            <StringItem index="15" value="Nuestra Se&#xf1;ora de Consolaci&#xf3;n"/>
+            <StringItem index="16" value="Nuestra Se&#xf1;ora de Guadalupe"/>
+            <StringItem index="17" value="Nuestra Se&#xf1;ora de Guadalupe"/>
+            <StringItem index="18" value="Nuestra Se&#xf1;ora de Hontanares"/>
+            <StringItem index="19" value="Nuestra Se&#xf1;ora de Loreto"/>
+            <StringItem index="20" value="Nuestra Se&#xf1;ora de Rodelga"/>
+            <StringItem index="21" value="Nuestra Se&#xf1;ora de Tejeda"/>
+            <StringItem index="22" value="Nuestra Se&#xf1;ora de Vallivana"/>
+            <StringItem index="23" value="Nuestra Se&#xf1;ora de El Henar"/>
+            <StringItem index="24" value="Nuestra Se&#xf1;ora del Bustar"/>
+            <StringItem index="25" value="Nuestra Se&#xf1;ora del Carmen"/>
+            <StringItem index="26" value="Nuestra Se&#xf1;ora del Coro"/>
+            <StringItem index="27" value="Nuestra Se&#xf1;ora del Buen Aire"/>
+            <StringItem index="28" value="Nuestra Se&#xf1;ora del Mar&#x200b;"/>
+            <StringItem index="29" value="Nuestra Se&#xf1;ora del Pilar"/>
+            <StringItem index="30" value="Nuestra Se&#xf1;ora del Pino"/>
+            <StringItem index="31" value="Nuestra Se&#xf1;ora del Puy"/>
+            <StringItem index="32" value="Nuestra Se&#xf1;ora del Rosario"/>
+            <StringItem index="33" value="Nuestra Se&#xf1;ora de Ri&#xe1;nsares"/>
+            <StringItem index="34" value="Nuestra Se&#xf1;ora de los Dolores"/>
+            <StringItem index="35" value="Nuestra Se&#xf1;ora de los Reyes"/>
+            <StringItem index="36" value="Nuestra Se&#xf1;ora de la Almudena&#x200b;"/>
+            <StringItem index="37" value="Nuestra Se&#xf1;ora de la Amargura"/>
+            <StringItem index="38" value="Nuestra Se&#xf1;ora de la Antigua"/>
+            <StringItem index="39" value="Nuestra Se&#xf1;ora de la Bella"/>
+            <StringItem index="40" value="Nuestra Se&#xf1;ora de la Cabeza"/>
+            <StringItem index="41" value="Nuestra Se&#xf1;ora de la Candelaria"/>
+            <StringItem index="42" value="Nuestra Se&#xf1;ora de la Carrasca"/>
+            <StringItem index="43" value="Nuestra Se&#xf1;ora de la Cela"/>
+            <StringItem index="44" value="Nuestra Se&#xf1;ora de la Cinta"/>
+            <StringItem index="45" value="Nuestra Se&#xf1;ora de la Encarnaci&#xf3;n"/>
+            <StringItem index="46" value="Nuestra Se&#xf1;ora de la Encina"/>
+            <StringItem index="47" value="Nuestra Se&#xf1;ora de la Fuencisla"/>
+            <StringItem index="48" value="Nuestra Se&#xf1;ora de la Fuensanta"/>
+            <StringItem index="49" value="Nuestra Se&#xf1;ora de la Luz"/>
+            <StringItem index="50" value="Nuestra Se&#xf1;ora de la Monjia"/>
+            <StringItem index="51" value="Nuestra Se&#xf1;ora de la Natividad"/>
+            <StringItem index="52" value="Nuestra Se&#xf1;ora de la Salud"/>
+            <StringItem index="53" value="Nuestra Se&#xf1;ora de la Soledad"/>
+            <StringItem index="54" value="Nuestra Se&#xf1;ora de la Sierra&#x200b;"/>
+            <StringItem index="55" value="Nuestra Se&#xf1;ora de las Angustias"/>
+            <StringItem index="56" value="Nuestra Se&#xf1;ora de las Cruces"/>
+            <StringItem index="57" value="Nuestra Se&#xf1;ora de las Gracias"/>
+            <StringItem index="58" value="Nuestra Se&#xf1;ora de las Mercedes&#x200b;"/>
+            <StringItem index="59" value="Nuestra Se&#xf1;ora de las Virtudes"/>
+            <StringItem index="60" value="Nuestra Se&#xf1;ora de los &#xc1;ngeles"/>
+            <StringItem index="61" value="Nuestra Se&#xf1;ora de los Inocentes, M&#xe1;rtires y Desamparados&#x200b;"/>
+            <StringItem index="62" value="Nuestra Se&#xf1;ora de los Remedios"/>
+            <StringItem index="63" value="Nuestra Se&#xf1;ora de San Antolin o Virgen de La Concha"/>
+            <StringItem index="64" value="Nuestra Se&#xf1;ora la Virgen de Gracia"/>
+            <StringItem index="65" value="Nuestra Se&#xf1;ora la Virgen de Labra"/>
+            <StringItem index="66" value="Nuestra Se&#xf1;ora Mar&#xed;a Sant&#xed;sima de los &#xc1;ngeles del Monte"/>
+            <StringItem index="67" value="Santa Mar&#xed;a de &#xc1;frica"/>
+            <StringItem index="68" value="Santa Mar&#xed;a de la Victoria&#x200b;"/>
+            <StringItem index="69" value="Santa Mar&#xed;a la Blanca"/>
+            <StringItem index="70" value="Santa Mar&#xed;a la Mayor&#x200b;"/>
+            <StringItem index="71" value="Santa Mar&#xed;a la Real de Las Huertas&#x200b;"/>
+            <StringItem index="72" value="Santa Mar&#xed;a la Real"/>
+            <StringItem index="73" value="Sant&#xed;sima Virgen de Gloria"/>
+            <StringItem index="74" value="Santisima Virgen de la Capilla"/>
+            <StringItem index="75" value="Sant&#xed;sima Virgen del Remedio Coronada"/>
+            <StringItem index="76" value="Virgen de Altamira&#x200b;"/>
+            <StringItem index="77" value="Virgen de Argeme"/>
+            <StringItem index="78" value="Virgen de Arrate&#x200b;"/>
+            <StringItem index="79" value="Virgen de Carballeda"/>
+            <StringItem index="80" value="Virgen de Carejas"/>
+            <StringItem index="81" value="Virgen de Chilla"/>
+            <StringItem index="82" value="Virgen de Cortes"/>
+            <StringItem index="83" value="Virgen de Covadonga"/>
+            <StringItem index="84" value="Virgen de Est&#xed;baliz&#x200b;"/>
+            <StringItem index="85" value="Virgen de Gu&#xed;a"/>
+            <StringItem index="86" value="Virgen de Herrera"/>
+            <StringItem index="87" value="Virgen de Inodejo"/>
+            <StringItem index="88" value="Virgen de Lluc"/>
+            <StringItem index="89" value="Virgen de Montemayor"/>
+            <StringItem index="90" value="Virgen de Montiel&#x200b;"/>
+            <StringItem index="91" value="Virgen de Montserrat"/>
+            <StringItem index="92" value="Virgen de Nuria"/>
+            <StringItem index="93" value="Virgen de Orito"/>
+            <StringItem index="94" value="Virgen de Piedraescrita&#x200b;"/>
+            <StringItem index="95" value="Virgen de Pueyos"/>
+            <StringItem index="96" value="Virgen de Queralt&#x200b;"/>
+            <StringItem index="97" value="Virgen de Salas"/>
+            <StringItem index="98" value="Virgen de San Lorenzo"/>
+            <StringItem index="99" value="Virgen de Santer&#xf3;n"/>
+            <StringItem index="100" value="Virgen de Tiscar"/>
+            <StringItem index="101" value="Virgen de Torreciudad"/>
+            <StringItem index="102" value="Virgen de Uju&#xe9;"/>
+            <StringItem index="103" value="Virgen de Urgel"/>
+            <StringItem index="104" value="Virgen de Valdeflores&#x200b;"/>
+            <StringItem index="105" value="Virgen de Valpara&#xed;so"/>
+            <StringItem index="106" value="Virgen de Valvanera"/>
+            <StringItem index="107" value="Virgen de la Antigua"/>
+            <StringItem index="108" value="Virgen de la Bien Aparecida"/>
+            <StringItem index="109" value="Virgen de la Candela&#x200b;"/>
+            <StringItem index="110" value="Virgen de la Caridad"/>
+            <StringItem index="111" value="Virgen de la Gleva&#x200b;"/>
+            <StringItem index="112" value="Virgen de la Muela"/>
+            <StringItem index="113" value="Virgen de la Paloma"/>
+            <StringItem index="114" value="Virgen de la Pe&#xf1;a&#x200b;"/>
+            <StringItem index="115" value="Virgen de la Riera&#x200b;"/>
+            <StringItem index="116" value="Virgen de la Soterra&#xf1;a&#x200b;"/>
+            <StringItem index="117" value="Virgen de la Vega"/>
+            <StringItem index="118" value="Virgen de la Veruela"/>
+            <StringItem index="119" value="Virgen de las Cuevas"/>
+            <StringItem index="120" value="Virgen de las Vi&#xf1;as"/>
+            <StringItem index="121" value="Virgen de Los Llanos"/>
+            <StringItem index="122" value="Virgen de los Lirios"/>
+            <StringItem index="123" value="Virgen de los Milagros"/>
+            <StringItem index="124" value="Virgen de los Ojos Grandes&#x200b;"/>
+            <StringItem index="125" value="Virgen de los Remedios"/>
+            <StringItem index="126" value="Virgen del Camino"/>
+            <StringItem index="127" value="Virgen del Castillo"/>
+            <StringItem index="128" value="Virgen del Claustro&#x200b;"/>
+            <StringItem index="129" value="Virgen del Espino"/>
+            <StringItem index="130" value="Virgen del Mir&#xf3;n"/>
+            <StringItem index="131" value="Virgen del Puerto"/>
+            <StringItem index="132" value="Virgen del Rebollet"/>
+            <StringItem index="133" value="Virgen del Roc&#xed;o"/>
+            <StringItem index="134" value="Virgen del Rosell"/>
+            <StringItem index="135" value="Virgen del Socorro"/>
+            <StringItem index="136" value="Virgen del Sufragio"/>
+            <StringItem index="137" value="Virgen del Valle&#x200b;"/>
+            <StringItem index="138" value="Virgen Dolorosa"/>
+            <StringItem index="139" value="Virgen Peregrina"/>
+            <StringItem index="140" value="Virgen Pura Dolorosa"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonAceptar">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="66" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="3"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="ACEPTAR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAceptarActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jToggleButton1"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="D&#xed;a de la Estaci&#xf3;n de Penitencia:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboVirgen1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="8">
+            <StringItem index="0" value="Domingo de Ramos"/>
+            <StringItem index="1" value="Lunes Santo"/>
+            <StringItem index="2" value="Martes Santo"/>
+            <StringItem index="3" value="Mi&#xe9;rcoles Santo"/>
+            <StringItem index="4" value="Jueves Santo"/>
+            <StringItem index="5" value="Viernes Santo"/>
+            <StringItem index="6" value="S&#xe1;bado Santo"/>
+            <StringItem index="7" value="Domingo de Resurrecci&#xf3;n"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+  </SubComponents>
+</Form>
