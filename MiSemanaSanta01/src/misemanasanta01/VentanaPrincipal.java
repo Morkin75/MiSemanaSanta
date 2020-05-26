@@ -63,6 +63,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     
     //Array con las imágenes de los Cristos disponibles
+    static public PasosC arrayPasosC[];
+    //Array con las imágenes de los Cristos disponibles
     static public Cristo arrayCristos[];
     //Array para guardar los enseres disponibles
     static public Enseres arrayEnseres[];
@@ -107,6 +109,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         arrayCristos[7]=new Cristo("Expiración", "Madera de pino", 17000, 0, 190, 220, new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/Cristos/Cristo08_210x276.png")));
         arrayCristos[8]=new Cristo("Expiración", "Madera de nogal", 18200, 0, 192, 340, new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/Cristos/Cristo09_210x276.png")));
         arrayCristos[9]=new Cristo("Expiración", "Madera de nogal", 22000, 0, 190, 250, new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/Cristos/Cristo010_210x276.png")));
+        
+        //Inicliazamos los Pasos
+        //Creamos un array de objetos de la clase empleados
+        arrayPasosC = new PasosC[3];        
+        arrayPasosC[0]=new PasosC(10000, 50, 186, 1000, new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/PasosCristo/Paso01_257x139.png")));
+        arrayPasosC[1]=new PasosC(12000, 40, 170, 1200, new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/PasosCristo/Paso02_257x139.png")));
+        arrayPasosC[2]=new PasosC(14000, 48, 160, 1100, new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/PasosCristo/Paso03_257x139.png")));
+        
+        
         
         arrayAgrupaciones = new Agrupaciones[25];
         arrayAgrupaciones[0] = new Agrupaciones("AM “San Juan Evangelista y Nuestra Señora de la Soledad” de El Bonillo", "El Bonillo", 80, 2000, false);
@@ -1252,6 +1263,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             sedecanonica.jComboBoxSemanaCultos.setSelectedIndex(miHermandad.getSemanaCultos());
             sedecanonica.jComboBoxMesFCristo.setSelectedIndex(miHermandad.getFestividadCristo());
             sedecanonica.jComboBoxMesFVirgen.setSelectedIndex(miHermandad.getFestividadVirgen());
+            //Vamos con los datos de los pasos
+            miHermandad.setCristo(miHermandad.getCristo()); //Guardamos el Cristo
+            pasos.seleccionarCristo(miHermandad.getCristo()); //Ponemos la imagen
+            
+            
             //Escribimos el histórico, con el método sobrecargado sin parámetros
             escribirHistorico();
             
