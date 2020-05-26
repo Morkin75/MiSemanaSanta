@@ -79,7 +79,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         
         //Inicializamos la Hermandad
-        miHermandad = new Hermandad(1000, 50, 30, 0, 0);
+        miHermandad = new Hermandad(100000, 50, 30, 0, 0);
         
         //Inicializamos la variable del dinero recaudado al mes
         dineroCuotas = 0;
