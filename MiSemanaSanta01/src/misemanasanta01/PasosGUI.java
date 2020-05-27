@@ -53,6 +53,11 @@ public class PasosGUI extends javax.swing.JFrame {
         cadena4 = "_257x139.png";
         numeroPaso = 1;
         
+        //Inicializamos las etiquetas correspondientes al Primer Paso
+        jLabelPrecioPaso.setText("" + VentanaPrincipal.arrayPasosC[numeroPaso-1].getPrecio());
+        jLabelImagenesPaso.setIcon(VentanaPrincipal.arrayPasosC[0].getImagen());
+        jLabelCostaleros.setText("" + VentanaPrincipal.arrayPasosC[numeroPaso-1].getCostaleros());
+        
         
     }
 
@@ -65,7 +70,6 @@ public class PasosGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanelCristo = new javax.swing.JPanel();
         jButtonComprarImagenP = new javax.swing.JButton();
@@ -87,21 +91,14 @@ public class PasosGUI extends javax.swing.JFrame {
         jLabelNCristo = new javax.swing.JLabel();
         jPanelComprarPaso = new javax.swing.JPanel();
         jPanelPaso = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelImagenesPaso = new javax.swing.JLabel();
         jButtonAnteriorPaso = new javax.swing.JButton();
         jButtonComprarPaso = new javax.swing.JButton();
         jButtonSiguientePaso = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabelPrecioPaso = new javax.swing.JLabel();
+        jLabelCostaleros = new javax.swing.JLabel();
         jPanelPalio = new javax.swing.JPanel();
-
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jButton1.setText("SALIR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jButton1 = new javax.swing.JButton();
 
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -117,6 +114,11 @@ public class PasosGUI extends javax.swing.JFrame {
 
         jButtonComprarPasoP.setFont(new java.awt.Font("Source Serif Pro", 1, 12)); // NOI18N
         jButtonComprarPasoP.setText("Comprar Paso");
+        jButtonComprarPasoP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonComprarPasoPActionPerformed(evt);
+            }
+        });
 
         jPanelComprarCristo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 102, 102), 2));
 
@@ -137,6 +139,7 @@ public class PasosGUI extends javax.swing.JFrame {
 
         jButtonAnteriorImagen.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
         jButtonAnteriorImagen.setText("<");
+        jButtonAnteriorImagen.setEnabled(false);
         jButtonAnteriorImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAnteriorImagenActionPerformed(evt);
@@ -144,6 +147,7 @@ public class PasosGUI extends javax.swing.JFrame {
         });
 
         jButtonComprarImagen.setText("Comprar");
+        jButtonComprarImagen.setEnabled(false);
         jButtonComprarImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonComprarImagenActionPerformed(evt);
@@ -152,6 +156,7 @@ public class PasosGUI extends javax.swing.JFrame {
 
         jButtonSiguienteImagen.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
         jButtonSiguienteImagen.setText(">");
+        jButtonSiguienteImagen.setEnabled(false);
         jButtonSiguienteImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSiguienteImagenActionPerformed(evt);
@@ -262,30 +267,48 @@ public class PasosGUI extends javax.swing.JFrame {
 
         jPanelPaso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255)));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/misemanasanta01/Graficos/PasosCristo/Paso00_257x139.png"))); // NOI18N
+        jLabelImagenesPaso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/misemanasanta01/Graficos/PasosCristo/Paso00_257x139.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelPasoLayout = new javax.swing.GroupLayout(jPanelPaso);
         jPanelPaso.setLayout(jPanelPasoLayout);
         jPanelPasoLayout.setHorizontalGroup(
             jPanelPasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabelImagenesPaso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelPasoLayout.setVerticalGroup(
             jPanelPasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabelImagenesPaso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jButtonAnteriorPaso.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
         jButtonAnteriorPaso.setText("<");
+        jButtonAnteriorPaso.setEnabled(false);
+        jButtonAnteriorPaso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAnteriorPasoActionPerformed(evt);
+            }
+        });
 
         jButtonComprarPaso.setText("Comprar");
+        jButtonComprarPaso.setEnabled(false);
+        jButtonComprarPaso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonComprarPasoActionPerformed(evt);
+            }
+        });
 
         jButtonSiguientePaso.setFont(new java.awt.Font("Lucida Grande", 0, 11)); // NOI18N
         jButtonSiguientePaso.setText(">");
+        jButtonSiguientePaso.setEnabled(false);
+        jButtonSiguientePaso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSiguientePasoActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setText("Precio:");
+        jLabelPrecioPaso.setText("Precio:");
 
-        jLabel3.setText("Costaleros:");
+        jLabelCostaleros.setText("Costaleros:");
 
         javax.swing.GroupLayout jPanelComprarPasoLayout = new javax.swing.GroupLayout(jPanelComprarPaso);
         jPanelComprarPaso.setLayout(jPanelComprarPasoLayout);
@@ -303,8 +326,8 @@ public class PasosGUI extends javax.swing.JFrame {
                         .addComponent(jButtonSiguientePaso, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelComprarPasoLayout.createSequentialGroup()
                         .addGroup(jPanelComprarPasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addComponent(jLabelPrecioPaso)
+                            .addComponent(jLabelCostaleros))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -319,9 +342,9 @@ public class PasosGUI extends javax.swing.JFrame {
                     .addComponent(jButtonSiguientePaso)
                     .addComponent(jButtonComprarPaso))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(jLabelPrecioPaso)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
+                .addComponent(jLabelCostaleros)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -335,13 +358,12 @@ public class PasosGUI extends javax.swing.JFrame {
                     .addGroup(jPanelCristoLayout.createSequentialGroup()
                         .addComponent(jPanelComprarCristo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(jPanelComprarPaso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(122, 122, 122))
+                        .addComponent(jPanelComprarPaso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelCristoLayout.createSequentialGroup()
                         .addComponent(jButtonComprarImagenP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonComprarPasoP)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jButtonComprarPasoP)))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanelCristoLayout.setVerticalGroup(
             jPanelCristoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,7 +386,7 @@ public class PasosGUI extends javax.swing.JFrame {
         jPanelPalio.setLayout(jPanelPalioLayout);
         jPanelPalioLayout.setHorizontalGroup(
             jPanelPalioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 823, Short.MAX_VALUE)
+            .addGap(0, 772, Short.MAX_VALUE)
         );
         jPanelPalioLayout.setVerticalGroup(
             jPanelPalioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,27 +395,35 @@ public class PasosGUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Paso de Palio", jPanelPalio);
 
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jButton1.setText("SALIR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 783, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                .addComponent(jTabbedPane1)
                 .addGap(21, 21, 21))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -407,7 +437,7 @@ public class PasosGUI extends javax.swing.JFrame {
 
     private void jButtonSiguienteImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSiguienteImagenActionPerformed
         System.out.println("" + numeroCristo);
-        if(numeroCristo<10) numeroCristo++; //Hay 11 Cristos, solo avanzamos si es menor de 11
+        if(numeroCristo<10) numeroCristo++; //Hay 10 Cristos, solo avanzamos si es menor de 10
         if(numeroCristo == 10) jButtonSiguienteImagen.setEnabled(false);
             else jButtonAnteriorImagen.setEnabled(true);
         //Mostramos los datos del Cristo a seleccionar
@@ -430,12 +460,17 @@ public class PasosGUI extends javax.swing.JFrame {
     private void jButtonComprarImagenPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarImagenPActionPerformed
         //Activamos los botones
         //jButtonAnteriorImagen.setEnabled(true);
-        numeroCristo = 1;
+        numeroCristo = VentanaPrincipal.miHermandad.getCristo();
+        if(numeroCristo < 0) numeroCristo = 1;
         seleccionarCristo(numeroCristo);
         jButtonSiguienteImagen.setEnabled(true);
-        jButtonComprarImagen.setEnabled(true);
+        jButtonAnteriorImagen.setEnabled(true);
+        jButtonComprarImagen.setEnabled(false);
         jButtonComprarImagenP.setEnabled(false);
         jButtonComprarPasoP.setEnabled(false);
+        jButtonAnteriorPaso.setEnabled(false);
+        jButtonSiguientePaso.setEnabled(false);
+        jButtonComprarPaso.setEnabled(false);
     }//GEN-LAST:event_jButtonComprarImagenPActionPerformed
 
     private void jButtonComprarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarImagenActionPerformed
@@ -453,11 +488,13 @@ public class PasosGUI extends javax.swing.JFrame {
                 
                 //Modificamos el estado de los botones
                 jButtonSiguienteImagen.setEnabled(false);
+                jButtonAnteriorImagen.setEnabled(false);
                 jButtonComprarImagen.setEnabled(false);
                 jButtonComprarPaso.setEnabled(false);
                 jButtonAnteriorPaso.setEnabled(false);
                 jButtonComprarImagenP.setEnabled(true);
                 jButtonComprarPasoP.setEnabled(true);
+                
                 
                 //Actualizamos el dinero y la popularidad de la hermandad
                 VentanaPrincipal.miHermandad.setDinero(VentanaPrincipal.miHermandad.getDinero() - VentanaPrincipal.arrayCristos[numeroCristo-1].getPrecio()); //Actualizamos el dinero
@@ -469,6 +506,67 @@ public class PasosGUI extends javax.swing.JFrame {
         }
         //System.out.println("Precio" + VentanaPrincipal.arrayCristos[numeroCristo-1].getPrecio());
     }//GEN-LAST:event_jButtonComprarImagenActionPerformed
+
+    private void jButtonComprarPasoPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarPasoPActionPerformed
+        numeroPaso = VentanaPrincipal.miHermandad.getPasoCristo();
+        if(numeroPaso < 0) numeroPaso = 1;
+        System.out.println("A ver: " + numeroPaso);
+        seleccionarPaso(numeroPaso);
+        jButtonComprarPaso.setEnabled(true);
+        jButtonSiguientePaso.setEnabled(true);
+    }//GEN-LAST:event_jButtonComprarPasoPActionPerformed
+
+    private void jButtonSiguientePasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSiguientePasoActionPerformed
+        System.out.println("" + numeroPaso);
+        if(numeroPaso<3) numeroPaso++; //Hay 3 Pasos, solo avanzamos si es menor de 3
+        if(numeroPaso == 3) jButtonSiguientePaso.setEnabled(false);
+            else jButtonAnteriorPaso.setEnabled(true);
+        //Mostramos los datos del Cristo a seleccionar
+        seleccionarPaso(numeroPaso);
+
+    }//GEN-LAST:event_jButtonSiguientePasoActionPerformed
+
+    private void jButtonAnteriorPasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnteriorPasoActionPerformed
+        System.out.println("" + numeroPaso);
+        if(numeroPaso > 1) numeroPaso--; //Hay 3 Pasos, solo retrocedemos si es mayor de 0
+        if(numeroPaso == 1) jButtonAnteriorPaso.setEnabled(false);
+            else jButtonSiguientePaso.setEnabled(true);
+        //Mostramos los datos del Cristo a seleccionar
+        seleccionarPaso(numeroPaso);
+    }//GEN-LAST:event_jButtonAnteriorPasoActionPerformed
+
+    private void jButtonComprarPasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarPasoActionPerformed
+        this.setAlwaysOnTop(false);
+        if(VentanaPrincipal.miHermandad.getDinero() < VentanaPrincipal.arrayPasosC[numeroPaso-1].getPrecio())
+        { //La hermandad no tiene dinero
+            JOptionPane.showConfirmDialog(null, "No tienes dinero suficiente para comprar este Paso.", "PASO", JOptionPane.DEFAULT_OPTION);
+        } else { //La hermandad tiene dinero
+            int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que quieres comprar este paso?\n", "COMPRAR PASO", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, imagenesPasosCristo);
+            //Después restamos el dinero y aumentamos la popularidad, siempre que aceptemos
+            if(opcion == 0) { //Esto es que ha pulsado SÍ
+                //Guardamos los datos de la imagen adquirida 
+                VentanaPrincipal.miHermandad.setPasoCristo(numeroPaso);
+                JOptionPane.showMessageDialog(null, "Has comprado un paso para tu hermandad.", "PASO", JOptionPane.OK_OPTION, imagenesPasosCristo);
+                
+                //Modificamos el estado de los botones
+                jButtonSiguienteImagen.setEnabled(false);
+                jButtonAnteriorImagen.setEnabled(false);
+                jButtonComprarImagen.setEnabled(false);
+                jButtonComprarPaso.setEnabled(false);
+                jButtonAnteriorPaso.setEnabled(false);
+                jButtonSiguientePaso.setEnabled(false);
+                jButtonComprarImagenP.setEnabled(true);
+                jButtonComprarPasoP.setEnabled(true);
+                               
+                //Actualizamos el dinero y la popularidad de la hermandad
+                VentanaPrincipal.miHermandad.setDinero(VentanaPrincipal.miHermandad.getDinero() - VentanaPrincipal.arrayPasosC[numeroPaso-1].getPrecio()); //Actualizamos el dinero
+                MiSemanaSanta01.ventanaPrincipal.jTextFieldDinero.setText("" + VentanaPrincipal.miHermandad.getDinero()); //Actualizamos el jlabel
+                //Comprar un Paso sube la popularidad como si donáramos 1000 euros
+                int subidaPopularidad = VentanaPrincipal.miHermandad.calcularPopularidad(1000); //Calculamos cuánto sube la popularidad
+                MiSemanaSanta01.ventanaPrincipal.escribirHistorico("Has comprado un paso de Cristo para tu hermandad.\n\n");
+            }
+        }
+    }//GEN-LAST:event_jButtonComprarPasoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -482,18 +580,18 @@ public class PasosGUI extends javax.swing.JFrame {
     public javax.swing.JButton jButtonSiguienteImagen;
     private javax.swing.JButton jButtonSiguientePaso;
     private javax.swing.JCheckBox jCheckBoxCristoSeleccionado;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelAltura;
     private javax.swing.JLabel jLabelAlturaCristo;
+    private javax.swing.JLabel jLabelCostaleros;
     private javax.swing.JLabel jLabelImagenesCristo;
+    private javax.swing.JLabel jLabelImagenesPaso;
     private javax.swing.JLabel jLabelMaterialCristo;
     private javax.swing.JLabel jLabelNCristo;
     private javax.swing.JLabel jLabelPeso;
     private javax.swing.JLabel jLabelPesoCristo;
     private javax.swing.JLabel jLabelPrecio;
     private javax.swing.JLabel jLabelPrecioCristo;
+    private javax.swing.JLabel jLabelPrecioPaso;
     public javax.swing.JPanel jPanelComprarCristo;
     private javax.swing.JPanel jPanelComprarPaso;
     private javax.swing.JPanel jPanelCristo;
@@ -505,6 +603,7 @@ public class PasosGUI extends javax.swing.JFrame {
 
     public void seleccionarCristo(int numeroCristo) {
         imagenesCristo = new ImageIcon(getClass().getResource(cadena1 + "0" + numeroCristo + cadena2));
+        System.out.println("Numero Cristo: " + numeroCristo);
         jLabelImagenesCristo.setIcon(VentanaPrincipal.arrayCristos[numeroCristo-1].getImagen());
         jLabelPrecioCristo.setText("" + VentanaPrincipal.arrayCristos[numeroCristo-1].getPrecio());
         jLabelMaterialCristo.setText("" + VentanaPrincipal.arrayCristos[numeroCristo-1].getMaterial());
@@ -522,5 +621,25 @@ public class PasosGUI extends javax.swing.JFrame {
         
         jLabelNCristo.setText(numeroCristo + " de " + VentanaPrincipal.arrayCristos.length);
         
+    }
+    public void seleccionarPaso(int numeroPaso) {
+        imagenesPasosCristo = new ImageIcon(getClass().getResource(cadena3 + "0" + numeroPaso + cadena4));
+        System.out.println("Numero Paso: " + numeroPaso);
+        jLabelImagenesPaso.setIcon(VentanaPrincipal.arrayPasosC[numeroPaso-1].getImagen());
+        jLabelPrecioPaso.setText("" + VentanaPrincipal.arrayPasosC[numeroPaso-1].getPrecio());
+        jLabelCostaleros.setText("" + VentanaPrincipal.arrayPasosC[numeroPaso-1].getCostaleros());
+        //jLabelAlturaCristo.setText("" + VentanaPrincipal.arrayCristos[numeroCristo-1].getAltura());
+        //jLabelPesoCristo.setText("" + VentanaPrincipal.arrayCristos[numeroCristo-1].getPeso());
+        
+        //Vamos a comprobar si es la imagen actual de la hermandad
+        if(VentanaPrincipal.miHermandad.getPasoCristo() == numeroPaso) {
+            //jCheckBoxCristoSeleccionado.setSelected(true);
+            //jButtonComprarImagen.setEnabled(false);
+        } else {
+            //jCheckBoxCristoSeleccionado.setSelected(false);
+            //jButtonComprarImagen.setEnabled(true);
+        }
+        
+        //jLabelNCristo.setText(numeroCristo + " de " + VentanaPrincipal.arrayCristos.length);
     }
 }

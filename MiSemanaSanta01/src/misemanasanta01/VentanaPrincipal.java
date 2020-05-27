@@ -1263,19 +1263,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             sedecanonica.jComboBoxSemanaCultos.setSelectedIndex(miHermandad.getSemanaCultos());
             sedecanonica.jComboBoxMesFCristo.setSelectedIndex(miHermandad.getFestividadCristo());
             sedecanonica.jComboBoxMesFVirgen.setSelectedIndex(miHermandad.getFestividadVirgen());
-            //Vamos con los datos de los pasos
+            //Vamos con los datos de las imágenes de los pasos
             miHermandad.setCristo(miHermandad.getCristo()); //Guardamos el Cristo
             pasos.seleccionarCristo(miHermandad.getCristo()); //Ponemos la imagen
-            
+            //Y los datos de los pasos
+            miHermandad.setPasoCristo(miHermandad.getPasoCristo()); //Guardamos el Paso del Cristo
+            pasos.seleccionarPaso(miHermandad.getPasoCristo());
             
             //Escribimos el histórico, con el método sobrecargado sin parámetros
             escribirHistorico();
             
             
         } catch (FileNotFoundException ex) { //Si entramos aquí, ha habido algún error
-            JOptionPane.showMessageDialog(null, "No se ha podido guardar la partida", "Advertencia",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No se ha podido cargar la partida.\n\n Fichero no encontrado.", "Advertencia",JOptionPane.WARNING_MESSAGE);
         } catch (IOException | ClassNotFoundException ex) { //Si entramos aquí, ha habido algún error
-            JOptionPane.showMessageDialog(null, "No se ha podido guardar la partida", "Advertencia",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No se ha podido cargar la partida.\n\n Hay incompatibilidades.", "Advertencia",JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jMenuItemCarPartidaActionPerformed
 

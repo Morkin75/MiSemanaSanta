@@ -38,6 +38,26 @@ public class Hermandad implements Serializable {
     //Datos de las imágenes
     private int cristo;
     private int virgen;
+    
+    //Datos de los pasos
+    private int pasoCristo;
+    private int pasoVirgen;
+
+    public int getPasoCristo() {
+        return pasoCristo;
+    }
+
+    public void setPasoCristo(int pasoCristo) {
+        this.pasoCristo = pasoCristo;
+    }
+
+    public int getPasoVirgen() {
+        return pasoVirgen;
+    }
+
+    public void setPasoVirgen(int pasoVirgen) {
+        this.pasoVirgen = pasoVirgen;
+    }
 
     public int getSemanaCultos() {
         return semanaCultos;
@@ -213,9 +233,12 @@ public class Hermandad implements Serializable {
         this.colorCaperuz = 100;
         this.colorTunica = 100;
         
-        //Vamos con los pasos. Un valor negativo indica que la hermandad aún no tiene imágenes
+        //Vamos con las imágenes. Un valor negativo indica que la hermandad aún no tiene imágenes
         this.cristo = -1;
         this.virgen = -1;
+        //Vamos con los pasos. Un valor negativo indica que la hermandad aún no tiene pasos
+        this.pasoCristo = -1;
+        this.pasoVirgen = -1;
         
         //Creamos la semilla del número aleatorio
         numeroAle = new Random(System.currentTimeMillis());
@@ -285,12 +308,21 @@ public class Hermandad implements Serializable {
         int subidaPopularidad = 0;
         if(dinero < 50) { //Se ha donado muy poco dinero. La popularidad casi seguro que no varía
             numero1 = numeroAle.nextInt(99)+1;
-            if(numero1 < 98) { //Creamos un numero aleatorio entre 1 y 100
+            if(numero1 < 10) { //Creamos un numero aleatorio entre 1 y 100
                 subidaPopularidad = numeroAle.nextInt(3)+1;//La Popularidad sube entre 1 y 3 puntos
                 this.setPopularidad(this.getPopularidad() + subidaPopularidad);
                 MiSemanaSanta01.ventanaPrincipal.jTextFieldPopularidad.setText("" + this.getPopularidad());
             }
         }
+        if(dinero < 2000) { //Se ha donado bastante. La popularidad seguro que varía mucho
+            numero1 = numeroAle.nextInt(99)+1;
+            if(numero1 < 98) { //Creamos un numero aleatorio entre 1 y 100
+                subidaPopularidad = numeroAle.nextInt(400)+100;//La Popularidad sube entre 100 y 500 puntos
+                this.setPopularidad(this.getPopularidad() + subidaPopularidad);
+                MiSemanaSanta01.ventanaPrincipal.jTextFieldPopularidad.setText("" + this.getPopularidad());
+            }
+        }
+        System.out.println("SUBIDA POPU: " + subidaPopularidad);
         return subidaPopularidad;
     }
     
