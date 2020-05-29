@@ -42,6 +42,26 @@ public class Hermandad implements Serializable {
     //Datos de los pasos
     private int pasoCristo;
     private int pasoVirgen;
+    
+    //Datos de las bandas
+    private int bandaCristo;
+    private int bandaPalio;
+
+    public int getBandaCristo() {
+        return bandaCristo;
+    }
+
+    public void setBandaCristo(int bandaCristo) {
+        this.bandaCristo = bandaCristo;
+    }
+
+    public int getBandaPalio() {
+        return bandaPalio;
+    }
+
+    public void setBandaPalio(int bandaPalio) {
+        this.bandaPalio = bandaPalio;
+    }
 
     public int getPasoCristo() {
         return pasoCristo;
@@ -237,6 +257,10 @@ public class Hermandad implements Serializable {
         //Vamos con los pasos. Un valor negativo indica que la hermandad aún no tiene pasos
         this.pasoCristo = -1;
         this.pasoVirgen = -1;
+        
+        //Vamos con las bandas. Un valor negativo indica que no hay bandas contratadas
+        this.bandaCristo = -1;
+        this.bandaPalio = -1;
         
         //Creamos la semilla del número aleatorio
         numeroAle = new Random(System.currentTimeMillis());

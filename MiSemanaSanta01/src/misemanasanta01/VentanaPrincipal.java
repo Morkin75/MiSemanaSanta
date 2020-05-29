@@ -68,10 +68,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     static public Cristo arrayCristos[];
     //Array para guardar los enseres disponibles
     static public Enseres arrayEnseres[];
-    //Array de las BandasGUI de Cristo
+    //Array de las Bandas de Cristo
     static public Agrupaciones arrayAgrupaciones[];
-    //Array de las BandasGUI de CCTT
+    //Array de las Bandas de CCTT
     static public CCTT arrayCCTT[];
+    //Array de las Bandas de Palio
+    static public BandasPalio arrayBandasPalio[];
     
     //Vamos a crear la Ventana para Guardar la Partida
     String nombrePartida;
@@ -116,9 +118,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         arrayPasosC[0]=new PasosC(10000, 50, 186, 1000, new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/PasosCristo/Paso01_257x139.png")));
         arrayPasosC[1]=new PasosC(12000, 40, 170, 1200, new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/PasosCristo/Paso02_257x139.png")));
         arrayPasosC[2]=new PasosC(14000, 48, 160, 1100, new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/PasosCristo/Paso03_257x139.png")));
-        
-        
-        
+
+        //Este es al Array de las Agrupaciones Musicales
         arrayAgrupaciones = new Agrupaciones[25];
         arrayAgrupaciones[0] = new Agrupaciones("AM “San Juan Evangelista y Nuestra Señora de la Soledad” de El Bonillo", "El Bonillo", 80, 2000, false);
         arrayAgrupaciones[1] = new Agrupaciones("AM “Cruz Roja” de Tobarra", "Tobarra", 70, 1000, false);
@@ -273,7 +274,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         SON 149
         */
         
-        arrayCCTT = new CCTT[20];        
+        arrayCCTT = new CCTT[33];
         arrayCCTT[0] = new CCTT("Banda de CCTT “Flagelación y Gloria” de Elche", "Elche", 80, 2000, true);
         arrayCCTT[1] = new CCTT("Banda de CCTT “Nuestro Padre Jesús Medinaceli” de Elda", "Elda", 80, 2000, true);
         arrayCCTT[2] = new CCTT("Banda de CCTT “Amor y Esperanza” de Pilar de la Horadadaa", "Pilar de la Horadaa", 80, 2000, true);
@@ -294,24 +295,68 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         arrayCCTT[17] = new CCTT("Banda de CCTT “Nuestro Padre Jesús Nazareno” de Rus", "Rus", 80, 2000, true);
         arrayCCTT[18] = new CCTT("Banda de CCTT “INRI” de Torreperogil", "Torreperogil", 80, 2000, true);
         arrayCCTT[19] = new CCTT("Banda de CCTT “Nuestro Padre Jesús Nazareno” de Villacarrillo", "Villacarrillo", 80, 2000, true);
-        /*
-        Banda de Cornetas y Tambores de las Reales Cofradías Fusionadas de Málaga – Ver ficha
-        Banda de Cornetas y Tambores “Santísimo Cristo del Mar” de Vélez-Málaga – Ver ficha
-        Banda de Cornetas y Tambores “San Juan Evangelista” de Las Cabezas de San Juan – Ver ficha
-        Banda de Cornetas y Tambores “Santísimo Cristo de la Vera-Cruz” de Los Palacios – Ver ficha
-        Banda de Cornetas y Tambores “María Santísima de la Palma” de Marchena – Ver ficha
-        Banda de Cornetas y Tambores “Nuestra Señora de los Ángeles” de Sevilla – Ver ficha
-        Banda de Cornetas y Tambores “Pasión de Cristo” de Sevilla – Ver ficha
-        Banda de Cornetas y Tambores “Sagrada Columna y Azotes” de Sevilla – Ver ficha
-        Banda de Cornetas y Tambores “Santísimo Cristo de la Sed” de Sevilla – Ver ficha
-        Banda de Cornetas y Tambores “Pasión y Esperanza” de Utrera – Ver ficha
-        Banda de Cornetas y Tambores “Vera+Cruz” de Utrera – Ver ficha
-        Banda de Cornetas y Tambores “Ntro. Padre Jesús de la Salud” de Talavera de la Reina – Ver ficha
-        Banda de Cornetas y Tambores “Nuestro Padre Jesús Cautivo” de Oliva
+        arrayCCTT[20] = new CCTT("Banda de CCTT de las Reales Cofradías Fusionadas de Málaga", "Málaga", 80, 2000, true);
+        arrayCCTT[21] = new CCTT("Banda de CCTT “Santísimo Cristo del Mar” de Vélez-Málaga", "Vélez-Málaga", 80, 2000, true);
+        arrayCCTT[22] = new CCTT("Banda de CCTT “San Juan Evangelista” de Las Cabezas de San Juan", "San Juan", 80, 2000, true);
+        arrayCCTT[23] = new CCTT("Banda de CCTT “Santísimo Cristo de la Vera-Cruz” de Los Palacios", "Los Palacios", 80, 2000, true);
+        arrayCCTT[24] = new CCTT("Banda de CCTT “María Santísima de la Palma” de Marchena", "Marchena", 80, 2000, true);
+        arrayCCTT[25] = new CCTT("Banda de CCTT “Nuestra Señora de los Ángeles” de Sevilla", "Sevilla", 80, 2000, true);
+        arrayCCTT[26] = new CCTT("Banda de CCTT “Pasión de Cristo” de Sevilla", "Sevilla", 80, 2000, true);
+        arrayCCTT[27] = new CCTT("Banda de CCTT “Sagrada Columna y Azotes” de Sevilla", "Sevilla", 80, 2000, true);
+        arrayCCTT[28] = new CCTT("Banda de CCTT “Santísimo Cristo de la Sed” de Sevilla", "Sevilla", 80, 2000, true);
+        arrayCCTT[29] = new CCTT("Banda de CCTT “Pasión y Esperanza” de Utrera", "Utrera", 80, 2000, true);
+        arrayCCTT[30] = new CCTT("Banda de CCTT “Vera+Cruz” de Utrera", "Utrera", 80, 2000, true);
+        arrayCCTT[31] = new CCTT("Banda de CCTT “Ntro. Padre Jesús de la Salud” de Talavera de la Reina", "Talavera de la Reina", 80, 2000, true);
+        arrayCCTT[32] = new CCTT("Banda de CCTT “Nuestro Padre Jesús Cautivo” de Oliva", "Oliva", 80, 2000, true);
         
+        //Este es el Array de las Bandas de Palio
+        arrayBandasPalio = new BandasPalio[1];
+        arrayBandasPalio[0] = new BandasPalio("Asociación Musical Cultural “Eladio Guzmán”", "Canjayar", 80, 2000, true);
+        /*
+        Banda de Música Municipal de Fiñana
+        Banda de Música “El Castillo” de Serón
+        Agrupación Musical “Virgen de la Soledad” de Maello
+        Banda de Música Municipal “Vicente Gómez Zarzuela” de Arcos de la Frontera
+        Banda de Música de Barbate
+        Banda de Música “Juan Aguilar” de El Bosque
+        Banda de Música Municipal “Maestro Enrique Galán” de Rota
+        Banda Sinfónica Municipal de San Fernando
+        Banda de Música “Maestros Villatoro y Algaba” de Castro del Río
+        Banda Sinfónica Municipal de Dos Torres
+        Banda de Música Municipal de Luque
+        Asociación Musico-Cultural “Juan Mohedo” de Montoro
+        Banda Sinfónica Municipal de Música de Pozoblanco
+        Banda de Música de El Viso de los Pedroches
+        Banda de Música Municipal “Valle del Zalabí” de Alcudia
+        Asociación Musical “El Alabí” de Cúllar
+        Banda de Música “Felipe Moreno” de Cúllar Vega
+        Banda de Música de Nevada
+        Banda de Música “Villa de Otura” de Otura
+        Banda de Música Municipal de El Cerro de Andévalo
+        Banda de Música “Nuestra Señora de Albricias” de El Cerro de Andévalo
+        Banda Filarmónica “Ciudad de Bollullos” de Bollullos Par del Condado
+        Banda de Música Municipal de Bollullos del Condado
+        Banda de Música “Nuestra Señora de la Cinta” de Huelva
+        Banda de Música Municipal “Nuestra Señora del Valle” de La Palma del Condado
+        Sociedad Filarmónica de Jaén
+        Banda de Música “Vera+Cruz” de Almogía
+        Banda de Música Municipal de Benalmádena
+        Asociación Musical “San Isidro Labrador” de Churriana
+        Unión Musical “Vera+Cruz” de Estepona
+        Asociación Musical y Cultural de Villanueva del Trabuco
+        Banda de Música “La Soledad” de Cantillana
+        Banda de Música de Carrión de los Céspedes
+        Banda de Música de Fuentes de Andalucía
+        Asociación Musical de La Algaba
+        Banda de Música Municipal de Lora del Río
+        Banda de Música Municipal de Morón de la Frontera
+        Banda de Música “Villa de Osuna” de Osuna
+        Banda de Música de la Cruz Roja de Sevilla
+        Banda de Música “Nuestra Señora del Sol” de Sevilla
+        Banda de Música “San Sebastián” de Villaverde del Río
         */
         
-        //Inicializamos los iconos
+//Inicializamos los iconos
         iconoDialogos = new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/IconoTambor.png"));
         icono2Dialogos = new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/Monedas.png"));
         
@@ -373,7 +418,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //Inicializamos la ventana casaHermandad
         casaHermandad = new HermandadCasaGUI();
         //Establecemos el tamaño de la ventana
-        casaHermandad.setSize(860, 480);
+        casaHermandad.setSize(925, 480);
         casaHermandad.setUndecorated(true);//Le quitamos los bordes
         casaHermandad.setLocationRelativeTo(null); //La centramos
         casaHermandad.setAlwaysOnTop(true); //Indicamos que siempre sea visible
@@ -1069,6 +1114,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jButtonBandasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBandasActionPerformed
         System.out.println("Ventana Bandas");
+        if(miHermandad.getBandaCristo() < 0) { //Esto indica que aún no hay ningna banda de Cristo
+            if(miHermandad.getBandaPalio() < 0) { //Y tampoco hay banda de Palio
+                JOptionPane.showConfirmDialog(null, "Aún no tienes ninguna banda contratada.", "BANDAS", JOptionPane.DEFAULT_OPTION);
+            } else {
+                JOptionPane.showConfirmDialog(null, "Solo tienes contratada la banda de palio.", "BANDAS", JOptionPane.DEFAULT_OPTION);
+            }
+        } else if (miHermandad.getBandaPalio() < 0) {
+            JOptionPane.showConfirmDialog(null, "Solo tienes contratada la banda de cristo.", "BANDAS", JOptionPane.DEFAULT_OPTION);
+        }
+            
+        
+        
         bandas.setVisible(true); //Mostramos la ventana
         this.setEnabled(false); //Desactivamos la Ventana Principal
     }//GEN-LAST:event_jButtonBandasActionPerformed

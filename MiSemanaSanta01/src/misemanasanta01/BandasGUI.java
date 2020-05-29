@@ -98,6 +98,11 @@ public class BandasGUI extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("SimSun", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 51, 255));
         jButton2.setText("Contratar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(51, 102, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -334,6 +339,10 @@ public class BandasGUI extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jListBandasCristoValueChanged
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
