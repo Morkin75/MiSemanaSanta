@@ -1138,6 +1138,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } else { //Si entra aquí, es porque la hermandad ya tiene nombre
             casaHermandad.jComboCristo.setEnabled(false);
             casaHermandad.jComboVirgen.setEnabled(false);
+            casaHermandad.jComboDia.setEnabled(false);
             casaHermandad.jButtonAceptar.setEnabled(false);
         }
         System.out.println("Ventana de Casa de Hermandad");
@@ -1161,8 +1162,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         estacionPenitencia.paint(g);
         //jLabelFechaMes.paint(g);
         System.out.println("Ventana Estacion de Penitencia");
-        //estacionPenitencia.setVisible(true); //Mostramos la ventana
-        //this.setEnabled(false); //Desactivamos la Ventana Principal
+        estacionPenitencia.setVisible(true); //Mostramos la ventana
+        this.setEnabled(false); //Desactivamos la Ventana Principal
         
         
     }//GEN-LAST:event_jButtonEstacionPenitenciaActionPerformed
@@ -1242,8 +1243,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             finanzas.jSliderCuotaHermano.setValue(miHermandad.getPrecioCuotaHermano());
             finanzas.jSliderPapeletaSitio.setValue(miHermandad.getPrecioPapeletaSitio());
             finanzas.jSliderLoteriaNavidad.setValue(miHermandad.getPrecioLoteriaNavidad());
-            //Cambiamos el nombre de la Hermandad
+            //Cambiamos el nombre de la Hermandad y el día de salida
             MiSemanaSanta01.nombreHermandad = miHermandad.getTituloHermandad();
+            
             //finanzas.jLabelNombreHermandad.setText(miHermandad.getTituloHermandad()); //No funciona, revisar
             //Vamos con los datos de la sede Canónica. Comprobamos primero la iglesia elegida
             if(miHermandad.getSedeCanonica().startsWith("Bas"))
@@ -1265,10 +1267,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             sedecanonica.jComboBoxMesFVirgen.setSelectedIndex(miHermandad.getFestividadVirgen());
             //Vamos con los datos de las imágenes de los pasos
             miHermandad.setCristo(miHermandad.getCristo()); //Guardamos el Cristo
-            pasos.seleccionarCristo(miHermandad.getCristo()); //Ponemos la imagen
+            if(miHermandad.getCristo() > 0) pasos.seleccionarCristo(miHermandad.getCristo()); //Ponemos la imagen si hay imagen
             //Y los datos de los pasos
             miHermandad.setPasoCristo(miHermandad.getPasoCristo()); //Guardamos el Paso del Cristo
-            pasos.seleccionarPaso(miHermandad.getPasoCristo());
+            if(miHermandad.getPasoCristo() > 0)  pasos.seleccionarPaso(miHermandad.getPasoCristo()); //Ponemos el paso si hay paso
+            //Vamos con los datos de la Hermandad
+            
+            casaHermandad.jComboDia.setSelectedItem(miHermandad.getDiaEstacionP());
+            //Hacer lo mismo con los otros JCombobox
             
             //Escribimos el histórico, con el método sobrecargado sin parámetros
             escribirHistorico();

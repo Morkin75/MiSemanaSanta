@@ -42,9 +42,28 @@ public class HermandadCasaGUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jComboVirgen = new javax.swing.JComboBox<>();
         jButtonAceptar = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
-        jComboVirgen1 = new javax.swing.JComboBox<>();
+        jComboDia = new javax.swing.JComboBox<>();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
+        jCheckBox7 = new javax.swing.JCheckBox();
+        jCheckBox8 = new javax.swing.JCheckBox();
+        jCheckBox9 = new javax.swing.JCheckBox();
+        jCheckBox10 = new javax.swing.JCheckBox();
+        jCheckBox11 = new javax.swing.JCheckBox();
+        jCheckBox12 = new javax.swing.JCheckBox();
+        jCheckBox13 = new javax.swing.JCheckBox();
+        jCheckBox14 = new javax.swing.JCheckBox();
+        jButtonModificar1 = new javax.swing.JButton();
+        jButtonModificar2 = new javax.swing.JButton();
+        jButtonModificar3 = new javax.swing.JButton();
 
         jButtonSalir.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jButtonSalir.setText("SALIR");
@@ -81,13 +100,221 @@ public class HermandadCasaGUI extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton1.setText("jToggleButton1");
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Día de la Estación de Penitencia:");
 
-        jComboVirgen1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboVirgen1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Domingo de Ramos", "Lunes Santo", "Martes Santo", "Miércoles Santo", "Jueves Santo", "Viernes Santo", "Sábado Santo", "Domingo de Resurrección" }));
+        jComboDia.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jComboDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Domingo de Ramos", "Lunes Santo", "Martes Santo", "Miércoles Santo", "Jueves Santo", "Viernes Santo", "Sábado Santo", "Domingo de Resurrección" }));
+        jComboDia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboDiaActionPerformed(evt);
+            }
+        });
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setText("TÍTULOS");
+
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 51, 51)));
+
+        jCheckBox1.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox1.setText("Real");
+        jCheckBox1.setEnabled(false);
+
+        jCheckBox2.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox2.setText("Muy Ilustre");
+        jCheckBox2.setEnabled(false);
+
+        jCheckBox3.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox3.setText("Antigua");
+        jCheckBox3.setEnabled(false);
+
+        jCheckBox4.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox4.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox4.setText("Insigne");
+        jCheckBox4.setEnabled(false);
+
+        jCheckBox5.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox5.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox5.setText("Imperial");
+        jCheckBox5.setEnabled(false);
+
+        jCheckBox6.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox6.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox6.setText("Primitiva");
+        jCheckBox6.setEnabled(false);
+
+        jCheckBox7.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox7.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox7.setText("Inmemorial");
+        jCheckBox7.setEnabled(false);
+
+        jCheckBox8.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox8.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox8.setText("Muy Antigua");
+        jCheckBox8.setEnabled(false);
+
+        jCheckBox9.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox9.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox9.setText("Colegial");
+        jCheckBox9.setEnabled(false);
+
+        jCheckBox10.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox10.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox10.setText("Fervorosa");
+        jCheckBox10.setEnabled(false);
+
+        jCheckBox11.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox11.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox11.setText("Ilustre");
+        jCheckBox11.setEnabled(false);
+
+        jCheckBox12.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox12.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox12.setText("Pontificia");
+        jCheckBox12.setEnabled(false);
+
+        jCheckBox13.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox13.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox13.setText("Venerable");
+        jCheckBox13.setEnabled(false);
+
+        jCheckBox14.setBackground(new java.awt.Color(204, 255, 255));
+        jCheckBox14.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBox14.setText("Magistral");
+        jCheckBox14.setEnabled(false);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jCheckBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jCheckBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCheckBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCheckBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCheckBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox12, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox14, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jCheckBox11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox14))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCheckBox1)
+                            .addComponent(jCheckBox6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCheckBox2)
+                            .addComponent(jCheckBox7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jCheckBox3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jCheckBox4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jCheckBox5))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jCheckBox8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jCheckBox9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jCheckBox10)))))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jButtonModificar1.setBackground(new java.awt.Color(204, 255, 204));
+        jButtonModificar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonModificar1.setForeground(new java.awt.Color(51, 0, 204));
+        jButtonModificar1.setText("MODIFICAR");
+        jButtonModificar1.setEnabled(false);
+        jButtonModificar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModificar1ActionPerformed(evt);
+            }
+        });
+
+        jButtonModificar2.setBackground(new java.awt.Color(204, 255, 204));
+        jButtonModificar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonModificar2.setForeground(new java.awt.Color(51, 0, 204));
+        jButtonModificar2.setText("MODIFICAR");
+        jButtonModificar2.setEnabled(false);
+        jButtonModificar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModificar2ActionPerformed(evt);
+            }
+        });
+
+        jButtonModificar3.setBackground(new java.awt.Color(204, 255, 204));
+        jButtonModificar3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonModificar3.setForeground(new java.awt.Color(51, 0, 204));
+        jButtonModificar3.setText("MODIFICAR");
+        jButtonModificar3.setEnabled(false);
+        jButtonModificar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModificar3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,40 +328,50 @@ public class HermandadCasaGUI extends javax.swing.JFrame {
                 .addGap(31, 31, 31))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboCristo, 0, 522, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboCristo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jComboVirgen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                        .addComponent(jComboVirgen1, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addComponent(jComboDia, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jToggleButton1)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonModificar1)
+                    .addComponent(jButtonModificar2)
+                    .addComponent(jButtonModificar3))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboCristo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1))
-                .addGap(18, 18, 18)
+                    .addComponent(jComboCristo)
+                    .addComponent(jButtonModificar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboVirgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboVirgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonModificar2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboVirgen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jComboDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonModificar3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalir)
                     .addComponent(jButtonAceptar))
@@ -156,20 +393,30 @@ public class HermandadCasaGUI extends javax.swing.JFrame {
                 + jComboCristo.getItemAt(jComboCristo.getSelectedIndex()) + " y "
                 + jComboVirgen.getItemAt(jComboVirgen.getSelectedIndex());
         //Preguntamos si el nombre es correcto...
-        int opcion = JOptionPane.showConfirmDialog(null, "Tu Hermandad se llamará: " + nombre, "NOMBRE DE HERMANDAD",
-                JOptionPane.OK_CANCEL_OPTION);
+        int opcion = JOptionPane.showConfirmDialog(null, "Tu Hermandad se llamará: " + nombre + "\n\n" + "Realizará Estación de Penitencia el " +
+                jComboDia.getItemAt(jComboDia.getSelectedIndex()) + "\n", "NOMBRE DE HERMANDAD", JOptionPane.OK_CANCEL_OPTION);
         //Si aceptamos, guardamos el nombre
-        if(opcion==0) {
+        if(opcion==0) { //Esto es que aceptamos
             MiSemanaSanta01.nombreHermandad = nombre;
             VentanaPrincipal.miHermandad.setTituloHermandad(nombre);
-            
+            VentanaPrincipal.miHermandad.setDiaEstacionP(jComboDia.getSelectedItem().toString());
+                        
             //Guardamos la posición del combo de cada advocación
             MiSemanaSanta01.advocacionC = jComboCristo.getSelectedIndex();
             MiSemanaSanta01.advocacionV = jComboVirgen.getSelectedIndex();
-        
-            this.dispose(); //Destruimos la instancia de esta ventana
-            MiSemanaSanta01.ventanaPrincipal.setEnabled(true); //Activamos la ventana principal
-            MiSemanaSanta01.ventanaPrincipal.setVisible(true); //Hacemos visible la ventana principal
+            
+            //Activamos el Botón MODIFICAR
+            jButtonModificar1.setEnabled(true);
+            jButtonModificar2.setEnabled(true);
+            jButtonModificar3.setEnabled(true);
+            jComboCristo.setEnabled(false);
+            jComboVirgen.setEnabled(false);
+            jComboDia.setEnabled(false);
+            jButtonAceptar.setEnabled(false);
+            
+            //this.dispose(); //Destruimos la instancia de esta ventana
+            //MiSemanaSanta01.ventanaPrincipal.setEnabled(true); //Activamos la ventana principal
+            //MiSemanaSanta01.ventanaPrincipal.setVisible(true); //Hacemos visible la ventana principal
             MiSemanaSanta01.ventanaPrincipal.escribirHistorico("Tu hermandad ya tiene nombre: " + VentanaPrincipal.miHermandad.getTituloHermandad() +".\n\n");
         }
         
@@ -180,16 +427,52 @@ public class HermandadCasaGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboCristoActionPerformed
 
+    private void jButtonModificar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificar2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonModificar2ActionPerformed
+
+    private void jButtonModificar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificar3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonModificar3ActionPerformed
+
+    private void jComboDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboDiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboDiaActionPerformed
+
+    private void jButtonModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificar1ActionPerformed
+        jComboCristo.setEnabled(true);
+        jButtonAceptar.setEnabled(true);
+    }//GEN-LAST:event_jButtonModificar1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jButtonAceptar;
+    private javax.swing.JButton jButtonModificar1;
+    private javax.swing.JButton jButtonModificar2;
+    private javax.swing.JButton jButtonModificar3;
     public static javax.swing.JButton jButtonSalir;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox10;
+    private javax.swing.JCheckBox jCheckBox11;
+    private javax.swing.JCheckBox jCheckBox12;
+    private javax.swing.JCheckBox jCheckBox13;
+    private javax.swing.JCheckBox jCheckBox14;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox jCheckBox7;
+    private javax.swing.JCheckBox jCheckBox8;
+    private javax.swing.JCheckBox jCheckBox9;
     public javax.swing.JComboBox<String> jComboCristo;
+    public javax.swing.JComboBox<String> jComboDia;
     public javax.swing.JComboBox<String> jComboVirgen;
-    public javax.swing.JComboBox<String> jComboVirgen1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    public javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

@@ -95,8 +95,13 @@ public class PasosGUI extends javax.swing.JFrame {
         jButtonAnteriorPaso = new javax.swing.JButton();
         jButtonComprarPaso = new javax.swing.JButton();
         jButtonSiguientePaso = new javax.swing.JButton();
+        jLabelPrecio2 = new javax.swing.JLabel();
+        jLabelCosta = new javax.swing.JLabel();
+        jLabelNPaso = new javax.swing.JLabel();
+        jCheckBoxPasoSeleccionado = new javax.swing.JCheckBox();
         jLabelPrecioPaso = new javax.swing.JLabel();
         jLabelCostaleros = new javax.swing.JLabel();
+        jButtonCancelar = new javax.swing.JButton();
         jPanelPalio = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
 
@@ -306,9 +311,26 @@ public class PasosGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabelPrecioPaso.setText("Precio:");
+        jLabelPrecio2.setText("Precio:");
 
-        jLabelCostaleros.setText("Costaleros:");
+        jLabelCosta.setText("Costaleros:");
+
+        jLabelNPaso.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabelNPaso.setForeground(new java.awt.Color(204, 51, 0));
+        jLabelNPaso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNPaso.setText("1 de 3");
+        jLabelNPaso.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
+        jCheckBoxPasoSeleccionado.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jCheckBoxPasoSeleccionado.setText("Paso Actual");
+        jCheckBoxPasoSeleccionado.setActionCommand("Paso Actual");
+        jCheckBoxPasoSeleccionado.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jCheckBoxPasoSeleccionado.setBorderPainted(true);
+        jCheckBoxPasoSeleccionado.setEnabled(false);
+
+        jLabelPrecioPaso.setText("0");
+
+        jLabelCostaleros.setText("0");
 
         javax.swing.GroupLayout jPanelComprarPasoLayout = new javax.swing.GroupLayout(jPanelComprarPaso);
         jPanelComprarPaso.setLayout(jPanelComprarPasoLayout);
@@ -317,19 +339,34 @@ public class PasosGUI extends javax.swing.JFrame {
             .addGroup(jPanelComprarPasoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelComprarPasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelPaso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanelComprarPasoLayout.createSequentialGroup()
-                        .addComponent(jButtonAnteriorPaso, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(jButtonComprarPaso)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonSiguientePaso, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelComprarPasoLayout.createSequentialGroup()
                         .addGroup(jPanelComprarPasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelPrecioPaso)
-                            .addComponent(jLabelCostaleros))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(jPanelPaso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanelComprarPasoLayout.createSequentialGroup()
+                                .addGroup(jPanelComprarPasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonAnteriorPaso, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelPrecio2)
+                                    .addComponent(jLabelCosta))
+                                .addGap(36, 36, 36)
+                                .addGroup(jPanelComprarPasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelComprarPasoLayout.createSequentialGroup()
+                                        .addComponent(jButtonComprarPaso)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButtonSiguientePaso, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanelComprarPasoLayout.createSequentialGroup()
+                                        .addGroup(jPanelComprarPasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelCostaleros, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabelPrecioPaso, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelComprarPasoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabelNPaso, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelComprarPasoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jCheckBoxPasoSeleccionado, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
         jPanelComprarPasoLayout.setVerticalGroup(
             jPanelComprarPasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,11 +379,28 @@ public class PasosGUI extends javax.swing.JFrame {
                     .addComponent(jButtonSiguientePaso)
                     .addComponent(jButtonComprarPaso))
                 .addGap(18, 18, 18)
-                .addComponent(jLabelPrecioPaso)
+                .addGroup(jPanelComprarPasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelPrecio2)
+                    .addComponent(jLabelPrecioPaso))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelCostaleros)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanelComprarPasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCosta)
+                    .addComponent(jLabelCostaleros))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jCheckBoxPasoSeleccionado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelNPaso)
+                .addContainerGap())
         );
+
+        jButtonCancelar.setFont(new java.awt.Font("Source Serif Pro", 1, 12)); // NOI18N
+        jButtonCancelar.setText("CANCELAR");
+        jButtonCancelar.setEnabled(false);
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelCristoLayout = new javax.swing.GroupLayout(jPanelCristo);
         jPanelCristo.setLayout(jPanelCristoLayout);
@@ -358,12 +412,15 @@ public class PasosGUI extends javax.swing.JFrame {
                     .addGroup(jPanelCristoLayout.createSequentialGroup()
                         .addComponent(jPanelComprarCristo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(jPanelComprarPaso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanelComprarPaso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 61, Short.MAX_VALUE))
                     .addGroup(jPanelCristoLayout.createSequentialGroup()
                         .addComponent(jButtonComprarImagenP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonComprarPasoP)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                        .addComponent(jButtonComprarPasoP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonCancelar)))
+                .addContainerGap())
         );
         jPanelCristoLayout.setVerticalGroup(
             jPanelCristoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,7 +431,8 @@ public class PasosGUI extends javax.swing.JFrame {
                 .addGap(0, 140, Short.MAX_VALUE)
                 .addGroup(jPanelCristoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonComprarImagenP)
-                    .addComponent(jButtonComprarPasoP))
+                    .addComponent(jButtonComprarPasoP)
+                    .addComponent(jButtonCancelar))
                 .addContainerGap())
         );
 
@@ -458,19 +516,13 @@ public class PasosGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAnteriorImagenActionPerformed
 
     private void jButtonComprarImagenPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarImagenPActionPerformed
-        //Activamos los botones
-        //jButtonAnteriorImagen.setEnabled(true);
+        //Vemos el Cristo que tiene la hermandad
         numeroCristo = VentanaPrincipal.miHermandad.getCristo();
-        if(numeroCristo < 0) numeroCristo = 1;
+        if(numeroCristo < 0) numeroCristo = 1; //Si es menor que 0 no tiene Cristo. Mostramos el primero
         seleccionarCristo(numeroCristo);
-        jButtonSiguienteImagen.setEnabled(true);
-        jButtonAnteriorImagen.setEnabled(true);
-        jButtonComprarImagen.setEnabled(false);
-        jButtonComprarImagenP.setEnabled(false);
-        jButtonComprarPasoP.setEnabled(false);
-        jButtonAnteriorPaso.setEnabled(false);
-        jButtonSiguientePaso.setEnabled(false);
-        jButtonComprarPaso.setEnabled(false);
+        //Verificamos el estado de los botones
+        botonesControl(1);
+        
     }//GEN-LAST:event_jButtonComprarImagenPActionPerformed
 
     private void jButtonComprarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarImagenActionPerformed
@@ -486,15 +538,8 @@ public class PasosGUI extends javax.swing.JFrame {
                 VentanaPrincipal.miHermandad.setCristo(numeroCristo);
                 JOptionPane.showMessageDialog(null, "Has comprado una imagen titular para tu hermandad.", "CRISTO", JOptionPane.OK_OPTION, imagenesCristo);
                 
-                //Modificamos el estado de los botones
-                jButtonSiguienteImagen.setEnabled(false);
-                jButtonAnteriorImagen.setEnabled(false);
-                jButtonComprarImagen.setEnabled(false);
-                jButtonComprarPaso.setEnabled(false);
-                jButtonAnteriorPaso.setEnabled(false);
-                jButtonComprarImagenP.setEnabled(true);
-                jButtonComprarPasoP.setEnabled(true);
-                
+                //Verificamos el estado de los botones
+                botonesControl(3);
                 
                 //Actualizamos el dinero y la popularidad de la hermandad
                 VentanaPrincipal.miHermandad.setDinero(VentanaPrincipal.miHermandad.getDinero() - VentanaPrincipal.arrayCristos[numeroCristo-1].getPrecio()); //Actualizamos el dinero
@@ -512,8 +557,7 @@ public class PasosGUI extends javax.swing.JFrame {
         if(numeroPaso < 0) numeroPaso = 1;
         System.out.println("A ver: " + numeroPaso);
         seleccionarPaso(numeroPaso);
-        jButtonComprarPaso.setEnabled(true);
-        jButtonSiguientePaso.setEnabled(true);
+        botonesControl(2);
     }//GEN-LAST:event_jButtonComprarPasoPActionPerformed
 
     private void jButtonSiguientePasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSiguientePasoActionPerformed
@@ -549,14 +593,7 @@ public class PasosGUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Has comprado un paso para tu hermandad.", "PASO", JOptionPane.OK_OPTION, imagenesPasosCristo);
                 
                 //Modificamos el estado de los botones
-                jButtonSiguienteImagen.setEnabled(false);
-                jButtonAnteriorImagen.setEnabled(false);
-                jButtonComprarImagen.setEnabled(false);
-                jButtonComprarPaso.setEnabled(false);
-                jButtonAnteriorPaso.setEnabled(false);
-                jButtonSiguientePaso.setEnabled(false);
-                jButtonComprarImagenP.setEnabled(true);
-                jButtonComprarPasoP.setEnabled(true);
+                botonesControl(3);
                                
                 //Actualizamos el dinero y la popularidad de la hermandad
                 VentanaPrincipal.miHermandad.setDinero(VentanaPrincipal.miHermandad.getDinero() - VentanaPrincipal.arrayPasosC[numeroPaso-1].getPrecio()); //Actualizamos el dinero
@@ -568,11 +605,17 @@ public class PasosGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonComprarPasoActionPerformed
 
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        //Desactivamos todos los botones excepto los de compra
+        botonesControl(3);
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     public javax.swing.JButton jButtonAnteriorImagen;
     private javax.swing.JButton jButtonAnteriorPaso;
+    private javax.swing.JButton jButtonCancelar;
     public javax.swing.JButton jButtonComprarImagen;
     private javax.swing.JButton jButtonComprarImagenP;
     private javax.swing.JButton jButtonComprarPaso;
@@ -580,16 +623,20 @@ public class PasosGUI extends javax.swing.JFrame {
     public javax.swing.JButton jButtonSiguienteImagen;
     private javax.swing.JButton jButtonSiguientePaso;
     private javax.swing.JCheckBox jCheckBoxCristoSeleccionado;
+    private javax.swing.JCheckBox jCheckBoxPasoSeleccionado;
     private javax.swing.JLabel jLabelAltura;
     private javax.swing.JLabel jLabelAlturaCristo;
+    private javax.swing.JLabel jLabelCosta;
     private javax.swing.JLabel jLabelCostaleros;
     private javax.swing.JLabel jLabelImagenesCristo;
     private javax.swing.JLabel jLabelImagenesPaso;
     private javax.swing.JLabel jLabelMaterialCristo;
     private javax.swing.JLabel jLabelNCristo;
+    private javax.swing.JLabel jLabelNPaso;
     private javax.swing.JLabel jLabelPeso;
     private javax.swing.JLabel jLabelPesoCristo;
     private javax.swing.JLabel jLabelPrecio;
+    private javax.swing.JLabel jLabelPrecio2;
     private javax.swing.JLabel jLabelPrecioCristo;
     private javax.swing.JLabel jLabelPrecioPaso;
     public javax.swing.JPanel jPanelComprarCristo;
@@ -601,6 +648,55 @@ public class PasosGUI extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 
+    public void botonesControl(int accion) { //1=Pasamos a las imágenes  2=Pasamos a los pasos 3=Pasamos abajo a los principales
+        //Comprobamos el estado de activación de los botones
+        if(accion == 1) { // Estamos manejando los botones de las imágenes
+            if(numeroCristo < VentanaPrincipal.arrayCristos.length) 
+                jButtonSiguienteImagen.setEnabled(true); //Activamos el botón de siguiente si no es el último
+            else
+                jButtonSiguienteImagen.setEnabled(false); //Desactivamos el botón de siguiente si es el último
+            if(numeroCristo > 1) 
+                jButtonAnteriorImagen.setEnabled(true); //Activamos el botón de anterior si no es el primero
+            else 
+                jButtonAnteriorImagen.setEnabled(false); 
+            if(numeroCristo == VentanaPrincipal.miHermandad.getCristo())
+                jButtonComprarImagen.setEnabled(false); //Este es nuestro Cristo. Desactivamos el botón
+            else
+                jButtonComprarImagen.setEnabled(true);
+            jButtonComprarImagenP.setEnabled(false); //Desactivamos los botones inferiores
+            jButtonComprarPasoP.setEnabled(false); //Desactivamos los botones inferiores
+            jButtonCancelar.setEnabled(true);
+        }
+        if(accion == 2) { // Estamos manejando los botones de los pasos
+            if(numeroPaso < VentanaPrincipal.arrayPasosC.length) 
+                jButtonSiguientePaso.setEnabled(true); //Activamos el botón de siguiente si no es el último
+            else
+                jButtonSiguientePaso.setEnabled(false); //Desactivamos el botón de siguiente si es el último
+            if(numeroPaso > 1) 
+                jButtonAnteriorPaso.setEnabled(true); //Activamos el botón de anterior si no es el primero
+            else 
+                jButtonAnteriorPaso.setEnabled(false); 
+            if(numeroPaso == VentanaPrincipal.miHermandad.getPasoCristo())
+                jButtonComprarPaso.setEnabled(false); //Este es nuestro Cristo. Desactivamos el botón
+            else
+                jButtonComprarPaso.setEnabled(true);
+            jButtonComprarImagenP.setEnabled(false); //Desactivamos los botones inferiores
+            jButtonComprarPasoP.setEnabled(false); //Desactivamos los botones inferiores
+            jButtonCancelar.setEnabled(true);
+        }
+        if(accion == 3) { // Pasamos a los botones de abajo
+            jButtonComprarImagenP.setEnabled(true); //Desactivamos los botones inferiores
+            jButtonComprarPasoP.setEnabled(true); //Desactivamos los botones inferiores
+            jButtonAnteriorImagen.setEnabled(false);
+            jButtonAnteriorPaso.setEnabled(false);
+            jButtonSiguienteImagen.setEnabled(false);
+            jButtonSiguientePaso.setEnabled(false);
+            jButtonComprarImagen.setEnabled(false);
+            jButtonComprarPaso.setEnabled(false);
+            jButtonCancelar.setEnabled(false);
+        }
+    }
+    
     public void seleccionarCristo(int numeroCristo) {
         imagenesCristo = new ImageIcon(getClass().getResource(cadena1 + "0" + numeroCristo + cadena2));
         System.out.println("Numero Cristo: " + numeroCristo);
@@ -633,13 +729,13 @@ public class PasosGUI extends javax.swing.JFrame {
         
         //Vamos a comprobar si es la imagen actual de la hermandad
         if(VentanaPrincipal.miHermandad.getPasoCristo() == numeroPaso) {
-            //jCheckBoxCristoSeleccionado.setSelected(true);
-            //jButtonComprarImagen.setEnabled(false);
+            jCheckBoxPasoSeleccionado.setSelected(true);
+            jButtonComprarPaso.setEnabled(false);
         } else {
-            //jCheckBoxCristoSeleccionado.setSelected(false);
-            //jButtonComprarImagen.setEnabled(true);
+            jCheckBoxPasoSeleccionado.setSelected(false);
+            jButtonComprarPaso.setEnabled(true);
         }
         
-        //jLabelNCristo.setText(numeroCristo + " de " + VentanaPrincipal.arrayCristos.length);
+        jLabelNPaso.setText(numeroPaso + " de " + VentanaPrincipal.arrayPasosC.length);
     }
 }

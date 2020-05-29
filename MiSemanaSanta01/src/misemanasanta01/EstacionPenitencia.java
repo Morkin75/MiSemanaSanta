@@ -7,10 +7,14 @@ package misemanasanta01;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.TransferHandler;
 
 /**
  *
@@ -40,6 +44,43 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         
         //Grafico para el mensaje del AlertBox
         iconoGuion = new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/Nazareno.png"));
+        
+        
+        
+        //Creamos el evento del ratón
+        MouseListener ml = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent me) {
+                System.out.println("Has pulsado");
+            }
+            @Override
+            public void mousePressed(MouseEvent me) {
+                JComponent jc = (JComponent) me.getSource();
+                TransferHandler th = jc.getTransferHandler();
+                th.exportAsDrag(jc, me, TransferHandler.COPY);
+            }
+            @Override
+            public void mouseReleased(MouseEvent me) {
+            }
+            @Override
+            public void mouseEntered(MouseEvent me) {
+            }
+            @Override
+            public void mouseExited(MouseEvent me) {
+            }
+        };
+        
+        //Asignamos el evento al objeto
+        jLabel2.addMouseListener(ml);
+        jLabel2.setTransferHandler(new TransferHandler("icon"));
+        jEditorPane1.addMouseListener(ml);
+        jEditorPane1.setTransferHandler(new TransferHandler("icon"));
+        
+        jLabel3.addMouseListener(ml);
+        jLabel3.setTransferHandler(new TransferHandler("icon"));
+        
+        add(jLabel2);
+        
     }
 
     /**
@@ -52,6 +93,10 @@ public class EstacionPenitencia extends javax.swing.JFrame {
     private void initComponents() {
 
         botonSalir = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -65,20 +110,46 @@ public class EstacionPenitencia extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/misemanasanta01/Graficos/Billete.png"))); // NOI18N
+        jLabel2.setText("ARRASTRAME");
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel3.setText("jLabel3");
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jEditorPane1.setContentType("icon"); // NOI18N
+        jEditorPane1.setDragEnabled(true);
+        jScrollPane1.setViewportView(jEditorPane1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(823, Short.MAX_VALUE)
-                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(202, 202, 202)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(513, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(215, 215, 215)
+                        .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 514, Short.MAX_VALUE)
-                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(205, 205, 205)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -115,5 +186,9 @@ public class EstacionPenitencia extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton botonSalir;
+    private javax.swing.JEditorPane jEditorPane1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

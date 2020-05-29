@@ -85,6 +85,15 @@ public class Hermandad implements Serializable {
     
     //Datos de la hermadad
     private String tituloHermandad;
+    private String diaEstacionP;
+
+    public String getDiaEstacionP() {
+        return diaEstacionP;
+    }
+
+    public void setDiaEstacionP(String diaEstacionP) {
+        this.diaEstacionP = diaEstacionP;
+    }
 
     public String getTituloHermandad() {
         return tituloHermandad;
@@ -100,17 +109,6 @@ public class Hermandad implements Serializable {
     
     String historico1, historico2, historico3, historico4;
     
-    //Datos del guión, de los Penitentes-colores
-    //Amarillo=0
-    //Azul=1
-    //Blanco=2
-    //Burdeos=3
-    //Celeste=4
-    //Marron=5
-    //Morado=6
-    //Negro=7
-    //Rojo=8
-    //Verde=9
     private int colorCaperuz;
     private int colorCapa;
     private int colorTunica;
