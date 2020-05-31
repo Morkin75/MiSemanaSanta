@@ -546,7 +546,7 @@ public class PasosGUI extends javax.swing.JFrame {
                 MiSemanaSanta01.ventanaPrincipal.jTextFieldDinero.setText("" + VentanaPrincipal.miHermandad.getDinero()); //Actualizamos el jlabel
                 //Comprar un Cristo sube la popularidad como si donáramos 1000 euros
                 int subidaPopularidad = VentanaPrincipal.miHermandad.calcularPopularidad(1000); //Calculamos cuánto sube la popularidad
-                MiSemanaSanta01.ventanaPrincipal.escribirHistorico("Has comprado una imagen titular para tu hermandad.\n\n");
+                MiSemanaSanta01.ventanaPrincipal.escribirHistorico("Has comprado una imagen titular para tu hermandad.\n\nLa Popularidad sube en " + subidaPopularidad + " puntos.\n\n");
             }
         }
         //System.out.println("Precio" + VentanaPrincipal.arrayCristos[numeroCristo-1].getPrecio());

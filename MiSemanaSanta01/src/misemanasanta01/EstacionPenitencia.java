@@ -27,6 +27,7 @@ public class EstacionPenitencia extends javax.swing.JFrame {
     Icon graficoCapa;
     Icon graficoTunica;
     Icon iconoGuion;
+    public int x1, x2, y1, y2, contador;
     
     //public Graphics g;
          
@@ -38,6 +39,7 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         
         //Le ponemos un marco la ventana
         this.getRootPane().setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, Color.BLUE));
+        x1=0; x2=0; y1=0; y2=0; contador=0;
         
         //g.setColor(Color.black);
         //g.drawRect(150, 70, 50, 70);
@@ -99,6 +101,11 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         jEditorPane1 = new javax.swing.JEditorPane();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         botonSalir.setFont(new java.awt.Font("VAGRounded BT", 1, 24)); // NOI18N
         botonSalir.setText("SALIR");
@@ -160,6 +167,22 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         MiSemanaSanta01.ventanaPrincipal.setVisible(true); //Hacemos visible la ventana principal
     }//GEN-LAST:event_botonSalirActionPerformed
 
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        System.out.println("Has pulsado el ratón");
+        System.out.println("" + evt.getX() + " " + evt.getY());
+        if (contador % 2 == 0) 
+        {
+            x1=evt.getX();
+            y1=evt.getY();
+        } else {
+            x2=evt.getX();
+            y2=evt.getY();
+        }
+        contador++;
+        
+        this.repaint();
+    }//GEN-LAST:event_formMouseClicked
+
     public void paint (Graphics g)
     {
         super.paint(g);
@@ -180,6 +203,10 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         int [] vx2 = {500, 550, 450};
         int [] vy2 = {270, 320, 320};
         g.fillPolygon (vx2, vy2, 3);
+        
+        g.setColor(Color.black);
+        if (contador % 2 == 0) g.drawLine(x1, y1, x2, y2);
+        
     }
     
     

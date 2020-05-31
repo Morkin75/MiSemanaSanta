@@ -1123,8 +1123,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         } else if (miHermandad.getBandaPalio() < 0) {
             JOptionPane.showConfirmDialog(null, "Solo tienes contratada la banda de cristo.", "BANDAS", JOptionPane.DEFAULT_OPTION);
         }
-            
         
+        if(miHermandad.getBandaCristo() >= 0) { //Esto es que ya hay Banda
+            bandas.jListBandasCristo.setEnabled(false);
+            bandas.jListBandasCristo.setSelectedIndex(miHermandad.getBandaCristo());
+            bandas.jRadioButtonAM.setEnabled(false);
+            bandas.jRadioButtonCCTT.setEnabled(false);
+            if(miHermandad.isTipoBandaC()) { //Si es TRUE, tenemos una Banda de CCTT
+                bandas.jRadioButtonAM.setSelected(false);
+                bandas.jRadioButtonCCTT.setSelected(true);
+                bandas.jLabelComponenteBanda.setText("" + arrayCCTT[miHermandad.getBandaCristo()].getComponentes());
+                bandas.jLabelCiudadBanda.setText("" + arrayCCTT[miHermandad.getBandaCristo()].getCiudad());
+                bandas.jLabelTipoBanda.setText("Banda de CCTT");
+                bandas.jLabelPrecioBanda.setText("" + arrayCCTT[miHermandad.getBandaCristo()].getPrecio());
+            } else { //Si es FALSE, tenemos una Agrupación musical
+                bandas.jRadioButtonAM.setSelected(true);
+                bandas.jRadioButtonCCTT.setSelected(false);
+                bandas.jLabelComponenteBanda.setText("" + arrayAgrupaciones[miHermandad.getBandaCristo()].getComponentes());
+                bandas.jLabelCiudadBanda.setText("" + arrayAgrupaciones[miHermandad.getBandaCristo()].getCiudad());
+                bandas.jLabelTipoBanda.setText("Agrupación Musical");
+                bandas.jLabelPrecioBanda.setText("" + arrayAgrupaciones[miHermandad.getBandaCristo()].getPrecio());
+            }
+            bandas.jButtonRescindorContrato.setEnabled(true);
+        }       
         
         bandas.setVisible(true); //Mostramos la ventana
         this.setEnabled(false); //Desactivamos la Ventana Principal
@@ -1191,12 +1212,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jButtonHermandadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHermandadActionPerformed
         //Si la hermandad no tiene nombre, hay que ponerle uno
         if(MiSemanaSanta01.nombreHermandad.isEmpty()) {
-            JOptionPane.showConfirmDialog(null, "Aún no has pusto un nombre a tu hermandad. Escoge Advocación Cristífera y Advocación Mariana para establecer un nombre.", "CASA DE HERMANDAD", JOptionPane.DEFAULT_OPTION);
+            JOptionPane.showConfirmDialog(null, "Aún no has puesto un nombre a tu hermandad. Escoge Advocación Cristífera y Advocación Mariana para establecer un nombre.", "CASA DE HERMANDAD", JOptionPane.DEFAULT_OPTION);
         } else { //Si entra aquí, es porque la hermandad ya tiene nombre
             casaHermandad.jComboCristo.setEnabled(false);
             casaHermandad.jComboVirgen.setEnabled(false);
             casaHermandad.jComboDia.setEnabled(false);
             casaHermandad.jButtonAceptar.setEnabled(false);
+            casaHermandad.jButtonModificar1.setEnabled(true);
+            casaHermandad.jButtonModificar2.setEnabled(true);
+            casaHermandad.jButtonModificar3.setEnabled(true);
         }
         System.out.println("Ventana de Casa de Hermandad");
         casaHermandad.setVisible(true); //Mostramos la ventana
@@ -1213,10 +1237,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuAcercaDeActionPerformed
 
     private void jButtonEstacionPenitenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEstacionPenitenciaActionPerformed
-        Graphics g = this.getGraphics();
-        //Graphics g = estacionPenitencia.botonSalir.getGraphics(); //No funciona
-        //g.drawLine(10, 10, 30, 30);
-        estacionPenitencia.paint(g);
+        //Graphics g = this.getGraphics();
+        
+        //estacionPenitencia.paint(g);
         //jLabelFechaMes.paint(g);
         System.out.println("Ventana Estacion de Penitencia");
         estacionPenitencia.setVisible(true); //Mostramos la ventana
@@ -1331,7 +1354,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             //Vamos con los datos de la Hermandad
             
             casaHermandad.jComboDia.setSelectedItem(miHermandad.getDiaEstacionP());
+            //casaHermandad.jComboCristo.setSelectedItem(miHermandad.get);
             //Hacer lo mismo con los otros JCombobox
+            
+            
+            //Vamos con los datos de las Bandas
+            if(miHermandad.getBandaCristo() >= 0) { //Esto es que ya hay Banda de Cristo
+                bandas.jListBandasCristo.setEnabled(false);
+                bandas.jListBandasCristo.setSelectedIndex(miHermandad.getBandaCristo()); //Establecemos los valores de la banda escogida
+                bandas.jRadioButtonAM.setEnabled(false);
+                bandas.jRadioButtonCCTT.setEnabled(false);
+                bandas.jButtonContratarC.setEnabled(false);
+            }   
             
             //Escribimos el histórico, con el método sobrecargado sin parámetros
             escribirHistorico();

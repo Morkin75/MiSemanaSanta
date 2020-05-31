@@ -447,9 +447,9 @@ public class HermandadCasaGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jButtonAceptar;
-    private javax.swing.JButton jButtonModificar1;
-    private javax.swing.JButton jButtonModificar2;
-    private javax.swing.JButton jButtonModificar3;
+    public javax.swing.JButton jButtonModificar1;
+    public javax.swing.JButton jButtonModificar2;
+    public javax.swing.JButton jButtonModificar3;
     public static javax.swing.JButton jButtonSalir;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;

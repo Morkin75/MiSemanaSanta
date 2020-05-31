@@ -9,6 +9,8 @@ import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 
 /**
@@ -21,12 +23,16 @@ public class BandasGUI extends javax.swing.JFrame {
      * Creates new form Finanzas
      */
     
+    static public ImageIcon imagenesBanda;
+    
     //Modelo de la lista de Agrupaciones Musicales
     DefaultListModel modeloAM = new DefaultListModel();
     DefaultListModel modeloCCTT = new DefaultListModel();
     
     public BandasGUI() {
                         
+        imagenesBanda = new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/IconoTambor.png"));
+        
         initComponents();
         //Le ponemos un marco la ventana
         this.getRootPane().setBorder(BorderFactory.createMatteBorder(3, 3, 3, 3, Color.BLUE));
@@ -68,7 +74,7 @@ public class BandasGUI extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanelBandaMisterio = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jButtonContratarC = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -82,6 +88,7 @@ public class BandasGUI extends javax.swing.JFrame {
         jListBandasCristo = new javax.swing.JList<>();
         jRadioButtonCCTT = new javax.swing.JRadioButton();
         jRadioButtonAM = new javax.swing.JRadioButton();
+        jButtonRescindorContrato = new javax.swing.JButton();
         jPanelBandaPalio = new javax.swing.JPanel();
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -95,12 +102,12 @@ public class BandasGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Escoge Banda:");
 
-        jButton2.setFont(new java.awt.Font("SimSun", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(51, 51, 255));
-        jButton2.setText("Contratar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonContratarC.setFont(new java.awt.Font("SimSun", 1, 18)); // NOI18N
+        jButtonContratarC.setForeground(new java.awt.Color(51, 51, 255));
+        jButtonContratarC.setText("Contratar");
+        jButtonContratarC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonContratarCActionPerformed(evt);
             }
         });
 
@@ -220,6 +227,16 @@ public class BandasGUI extends javax.swing.JFrame {
             }
         });
 
+        jButtonRescindorContrato.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonRescindorContrato.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        jButtonRescindorContrato.setText("Rescindir Contrato");
+        jButtonRescindorContrato.setEnabled(false);
+        jButtonRescindorContrato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRescindorContratoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelBandaMisterioLayout = new javax.swing.GroupLayout(jPanelBandaMisterio);
         jPanelBandaMisterio.setLayout(jPanelBandaMisterioLayout);
         jPanelBandaMisterioLayout.setHorizontalGroup(
@@ -234,11 +251,13 @@ public class BandasGUI extends javax.swing.JFrame {
                         .addGap(553, 553, 553))
                     .addGroup(jPanelBandaMisterioLayout.createSequentialGroup()
                         .addGroup(jPanelBandaMisterioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonContratarC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE))
                         .addGap(27, 27, 27)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanelBandaMisterioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonRescindorContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanelBandaMisterioLayout.setVerticalGroup(
@@ -255,7 +274,9 @@ public class BandasGUI extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addGroup(jPanelBandaMisterioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonRescindorContrato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonContratarC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(22, 22, 22))
         );
 
@@ -340,29 +361,77 @@ public class BandasGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jListBandasCristoValueChanged
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void jButtonContratarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContratarCActionPerformed
+        int numeroBanda; //Esto es para saber qué Banda tenemos seleccionada
+        numeroBanda = jListBandasCristo.getSelectedIndex();        
+        this.setAlwaysOnTop(false);
+        //Podemos escoger entre Agrupaciones o CCTT... habrá que ver qué array usamos entonces
+        if(jRadioButtonAM.isSelected()) {
+            if(VentanaPrincipal.miHermandad.getDinero() < VentanaPrincipal.arrayAgrupaciones[numeroBanda-1].getPrecio())
+            { //La hermandad no tiene dinero
+                JOptionPane.showConfirmDialog(null, "No tienes dinero suficiente para contratar a esta Banda.", "CONTRATAR BANDA", JOptionPane.DEFAULT_OPTION);
+            } else { //La hermandad tiene dinero
+                int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que quieres contratar a esta Banda?\n", "COMPRAR IMAGEN", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, imagenesBanda);
+                //Después restamos el dinero y aumentamos la popularidad, siempre que aceptemos
+                if(opcion == 0) { //Esto es que ha pulsado SÍ
+                    //Guardamos los datos de la imagen adquirida 
+                    VentanaPrincipal.miHermandad.setBandaCristo(numeroBanda);
+                    VentanaPrincipal.miHermandad.setTipoBandaC(false); //Esto indica que hemos cogido una Agrupacion Musical
+                    JOptionPane.showMessageDialog(null, "Has contratado a una banda de Cristo para tu hermandad.", "BANDA", JOptionPane.OK_OPTION, imagenesBanda);
+                
+                    //Verificamos el estado de los botones
+                    jButtonContratarC.setEnabled(false);
+                    jListBandasCristo.setEnabled(false);
+                    jButtonRescindorContrato.setEnabled(true);
+                    
+                    //Actualizamos el dinero y la popularidad de la hermandad
+                    VentanaPrincipal.miHermandad.setDinero(VentanaPrincipal.miHermandad.getDinero() - VentanaPrincipal.arrayAgrupaciones[numeroBanda-1].getPrecio()); //Actualizamos el dinero
+                    MiSemanaSanta01.ventanaPrincipal.jTextFieldDinero.setText("" + VentanaPrincipal.miHermandad.getDinero()); //Actualizamos el jlabel
+                    //Contratar una banda sube la popularidad como si donáramos 1000 euros
+                    int subidaPopularidad = VentanaPrincipal.miHermandad.calcularPopularidad(1000); //Calculamos cuánto sube la popularidad
+                    MiSemanaSanta01.ventanaPrincipal.escribirHistorico("Has contratado a una banda de Cristo para tu hermandad.\n\nLa Popularidad sube en " + subidaPopularidad + " puntos.\n\n");
+                }
+            }
+        } //Fin del IF si tenemos una Agrupación musical
+    }//GEN-LAST:event_jButtonContratarCActionPerformed
+
+    private void jButtonRescindorContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRescindorContratoActionPerformed
+        this.setAlwaysOnTop(false);
+        int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que quieres rescindir el contrato con la Banda actual?\n\n"
+                + " Perderás el dinero invertido\n",  "RESCINDIR CONTRATO", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, imagenesBanda);
+        if(opcion == 0) {//Esto es que SÍ
+            //desactivamos y activamos los botones y elementos necesarios
+            jButtonRescindorContrato.setEnabled(false);
+            jButtonContratarC.setEnabled(true);
+            jListBandasCristo.setEnabled(true);
+            jRadioButtonAM.setEnabled(true);
+            jRadioButtonCCTT.setEnabled(true);
+            //Ahora la hermandad no tiene banda... actualizamos el objeto
+            VentanaPrincipal.miHermandad.setBandaCristo(-1);
+            
+        }
+    }//GEN-LAST:event_jButtonRescindorContratoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton jButtonContratarC;
+    public javax.swing.JButton jButtonRescindorContrato;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabelCiudadBanda;
-    private javax.swing.JLabel jLabelComponenteBanda;
-    private javax.swing.JLabel jLabelPrecioBanda;
-    private javax.swing.JLabel jLabelTipoBanda;
-    private javax.swing.JList<String> jListBandasCristo;
+    public javax.swing.JLabel jLabelCiudadBanda;
+    public javax.swing.JLabel jLabelComponenteBanda;
+    public javax.swing.JLabel jLabelPrecioBanda;
+    public javax.swing.JLabel jLabelTipoBanda;
+    public javax.swing.JList<String> jListBandasCristo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelBandaMisterio;
     private javax.swing.JPanel jPanelBandaPalio;
-    private javax.swing.JRadioButton jRadioButtonAM;
-    private javax.swing.JRadioButton jRadioButtonCCTT;
+    public javax.swing.JRadioButton jRadioButtonAM;
+    public javax.swing.JRadioButton jRadioButtonCCTT;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables

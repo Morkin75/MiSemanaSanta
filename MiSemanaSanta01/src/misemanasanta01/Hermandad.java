@@ -45,6 +45,15 @@ public class Hermandad implements Serializable {
     
     //Datos de las bandas
     private int bandaCristo;
+    private boolean tipoBandaC;
+
+    public boolean isTipoBandaC() {
+        return tipoBandaC;
+    }
+
+    public void setTipoBandaC(boolean tipoBandaC) {
+        this.tipoBandaC = tipoBandaC;
+    }
     private int bandaPalio;
 
     public int getBandaCristo() {
@@ -261,6 +270,7 @@ public class Hermandad implements Serializable {
         //Vamos con las bandas. Un valor negativo indica que no hay bandas contratadas
         this.bandaCristo = -1;
         this.bandaPalio = -1;
+        
         
         //Creamos la semilla del número aleatorio
         numeroAle = new Random(System.currentTimeMillis());

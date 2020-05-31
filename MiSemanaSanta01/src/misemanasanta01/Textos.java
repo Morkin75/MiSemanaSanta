@@ -20,7 +20,8 @@ public class Textos {
             "Pruebas: Alberto L. Lorite Ávalos\n" + 
             "                      Miguel A. García Moreno\n\n" + 
             "GRÁFICOS DE IMÁGENES: http://dibujosparacatequesis.blogspot.com/ \n\n" + 
-            "GRÁFICOS DE PASOS: https://www.tallistaalvaroberrocal.com/ \n";
+            "GRÁFICOS DE PASOS: https://www.tallistaalvaroberrocal.com/ \n" +
+            "LISTADO DE BANDAS OBTENIDO DE: http://musicofrades.com/ \n";
     
     static final String TEXTO_AYUDA_DINERO = "El dinero es fundamental para que la hermandad vaya mejorando cada año." +
             "\n\nSe consigue dinero con los ingresos y las ventas, que irán en función del número de hermanos y el precio" +
