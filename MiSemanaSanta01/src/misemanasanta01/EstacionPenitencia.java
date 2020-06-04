@@ -29,6 +29,12 @@ public class EstacionPenitencia extends javax.swing.JFrame {
     Icon iconoGuion;
     public int x1, x2, y1, y2, contador;
     
+    int posMapaX, posMapaY;
+    
+    //Creamos un objeto del Mapa
+    Plano mapaFondo;
+    Plano edificio;
+
     //public Graphics g;
          
     /**
@@ -48,6 +54,29 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         iconoGuion = new ImageIcon(getClass().getResource("/misemanasanta01/Graficos/Nazareno.png"));
         
         
+        //Creamos el objeto del Mapa
+        mapaFondo = new Plano();
+        mapaFondo.setBounds(1, 1, 880, 660);
+        mapaFondo.setVisible(true);
+        //mapaFondo.inicializarMapaVacio();
+        mapaFondo.inicializarMapaVacio();//Inicializamos
+        mapaFondo.rellenarMapaSinCoordenadas(); //Rellenamos con las coordenadas
+        this.jLayeredPaneDibujo.add(mapaFondo, new Integer(1));
+        
+        
+        //Dibujando edificios
+        edificio = new Plano();
+        edificio.setBounds(1, 1, 880, 660);
+        edificio.setVisible(true);
+        //edificio.inicializarMapaVacio();
+        
+        edificio.dibujaEdificio();
+        edificio.rellenarMapaSinCoordenadas();
+        this.jLayeredPaneDibujo.add(edificio, new Integer(2));
+        
+        
+        posMapaX = 0;
+        posMapaY = 0;
         
         //Creamos el evento del ratón
         MouseListener ml = new MouseListener() {
@@ -75,8 +104,8 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         //Asignamos el evento al objeto
         jLabel2.addMouseListener(ml);
         jLabel2.setTransferHandler(new TransferHandler("icon"));
-        jEditorPane1.addMouseListener(ml);
-        jEditorPane1.setTransferHandler(new TransferHandler("icon"));
+        ////jEditorPane1.addMouseListener(ml);
+        //jEditorPane1.setTransferHandler(new TransferHandler("icon"));
         
         jLabel3.addMouseListener(ml);
         jLabel3.setTransferHandler(new TransferHandler("icon"));
@@ -97,8 +126,12 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         botonSalir = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jEditorPane1 = new javax.swing.JEditorPane();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jLayeredPaneDibujo = new javax.swing.JLayeredPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanelCalles = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         addMouseListener(new java.awt.event.MouseAdapter() {
@@ -124,40 +157,104 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jEditorPane1.setContentType("icon"); // NOI18N
-        jEditorPane1.setDragEnabled(true);
-        jScrollPane1.setViewportView(jEditorPane1);
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(800, 600));
+
+        jLayeredPaneDibujo.setPreferredSize(new java.awt.Dimension(880, 660));
+        jLayeredPaneDibujo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLayeredPaneDibujoMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jLayeredPaneDibujoLayout = new javax.swing.GroupLayout(jLayeredPaneDibujo);
+        jLayeredPaneDibujo.setLayout(jLayeredPaneDibujoLayout);
+        jLayeredPaneDibujoLayout.setHorizontalGroup(
+            jLayeredPaneDibujoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 882, Short.MAX_VALUE)
+        );
+        jLayeredPaneDibujoLayout.setVerticalGroup(
+            jLayeredPaneDibujoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 662, Short.MAX_VALUE)
+        );
+
+        jScrollPane2.setViewportView(jLayeredPaneDibujo);
+
+        jTabbedPane1.addTab("Itinerario", jScrollPane2);
+
+        jPanelCalles.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanelCallesLayout = new javax.swing.GroupLayout(jPanelCalles);
+        jPanelCalles.setLayout(jPanelCallesLayout);
+        jPanelCallesLayout.setHorizontalGroup(
+            jPanelCallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 319, Short.MAX_VALUE)
+        );
+        jPanelCallesLayout.setVerticalGroup(
+            jPanelCallesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 640, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelCalles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(553, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelCalles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("tab1", jPanel1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 884, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 664, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab2", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(202, 202, 202)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(513, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 889, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(215, 215, 215)
-                        .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(botonSalir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(205, 205, 205)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addGap(373, 373, 373)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -183,9 +280,22 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         this.repaint();
     }//GEN-LAST:event_formMouseClicked
 
+    private void jLayeredPaneDibujoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLayeredPaneDibujoMousePressed
+        System.out.println("Pulsado:" + jScrollPane2.getMousePosition().toString() + " - " 
+                + jScrollPane2.getMousePosition().x + ":" + jScrollPane2.getMousePosition().y);
+        //Obtenemos la casilla del mapa pulsada
+        posMapaX = jScrollPane2.getMousePosition().x/11;
+        posMapaY = jScrollPane2.getMousePosition().y/11;
+        System.out.println("Casilla: "+ posMapaX + "," + posMapaY);
+    }//GEN-LAST:event_jLayeredPaneDibujoMousePressed
+
+    /*
     public void paint (Graphics g)
     {
         super.paint(g);
+        
+        //jPanelCalles.paint(g);
+        //jTabbedPane1.paint(g);
 
         g.setColor (Color.blue);
         g.drawLine (0, 70, 100, 70);
@@ -208,14 +318,18 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         if (contador % 2 == 0) g.drawLine(x1, y1, x2, y2);
         
     }
-    
+    */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton botonSalir;
-    private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLayeredPane jLayeredPaneDibujo;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelCalles;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }

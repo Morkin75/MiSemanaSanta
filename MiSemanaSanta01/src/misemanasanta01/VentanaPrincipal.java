@@ -428,7 +428,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         //Inicializamos la ventana Estacion de Penitencia
         estacionPenitencia = new EstacionPenitencia();
         //Establecemos el tamaño de la ventana
-        estacionPenitencia.setSize(960, 580);
+        estacionPenitencia.setSize(1200, 760);
         estacionPenitencia.setUndecorated(true);//Le quitamos los bordes
         estacionPenitencia.setLocationRelativeTo(null); //La centramos
         estacionPenitencia.setAlwaysOnTop(true); //Indicamos que siempre sea visible
