@@ -30,10 +30,11 @@ public class EstacionPenitencia extends javax.swing.JFrame {
     public int x1, x2, y1, y2, contador;
     
     int posMapaX, posMapaY;
+    int posMapaXAntigua, posMapaYAntigua;
     
     //Creamos un objeto del Mapa
     Plano mapaFondo;
-    Plano edificio;
+    Plano edificios;
 
     //public Graphics g;
          
@@ -55,28 +56,28 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         
         
         //Creamos el objeto del Mapa
-        mapaFondo = new Plano();
-        mapaFondo.setBounds(1, 1, 880, 660);
-        mapaFondo.setVisible(true);
-        //mapaFondo.inicializarMapaVacio();
-        mapaFondo.inicializarMapaVacio();//Inicializamos
-        mapaFondo.rellenarMapaSinCoordenadas(); //Rellenamos con las coordenadas
-        this.jLayeredPaneDibujo.add(mapaFondo, new Integer(1));
+        //mapaFondo = new Plano();
+        //mapaFondo.setBounds(1, 1, 880, 660);
+        //mapaFondo.setVisible(true);
+        ////mapaFondo.inicializarMapaVacio();
+        //mapaFondo.inicializarMapaVacio();//Inicializamos
+        //mapaFondo.rellenarMapaSinCoordenadas(); //Rellenamos con las coordenadas
+        //this.jLayeredPaneDibujo.add(mapaFondo, new Integer(1));
         
         
-        //Dibujando edificios
-        edificio = new Plano();
-        edificio.setBounds(1, 1, 880, 660);
-        edificio.setVisible(true);
-        //edificio.inicializarMapaVacio();
-        
-        edificio.dibujaEdificio();
-        edificio.rellenarMapaSinCoordenadas();
-        this.jLayeredPaneDibujo.add(edificio, new Integer(2));
+        //Dibujando los edificios
+        edificios = new Plano(); //Cramos el plano
+        edificios.setBounds(1, 1, 880, 660); //Establecemos el tamaño
+        edificios.setVisible(true); //Lo hacemos visible
+        edificios.dibujarPlano1(); //Llamamos al método para dibujar el plano
+        edificios.rellenarMapaSinCoordenadas(); //Rellenamos con los valores asignados
+        this.jLayeredPaneDibujo.add(edificios, new Integer(1));
         
         
         posMapaX = 0;
         posMapaY = 0;
+        posMapaXAntigua = 0;
+        posMapaYAntigua = 0;
         
         //Creamos el evento del ratón
         MouseListener ml = new MouseListener() {
@@ -132,6 +133,7 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanelCalles = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         addMouseListener(new java.awt.event.MouseAdapter() {
@@ -160,6 +162,11 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jLayeredPaneDibujo.setPreferredSize(new java.awt.Dimension(880, 660));
+        jLayeredPaneDibujo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLayeredPaneDibujoMouseMoved(evt);
+            }
+        });
         jLayeredPaneDibujo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLayeredPaneDibujoMousePressed(evt);
@@ -226,6 +233,19 @@ public class EstacionPenitencia extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("tab2", jPanel2);
 
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 148, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -233,20 +253,28 @@ public class EstacionPenitencia extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 889, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonSalir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonSalir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(20, 20, 20))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(373, 373, 373)
+                .addGap(35, 35, 35)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(190, 190, 190)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -289,6 +317,18 @@ public class EstacionPenitencia extends javax.swing.JFrame {
         System.out.println("Casilla: "+ posMapaX + "," + posMapaY);
     }//GEN-LAST:event_jLayeredPaneDibujoMousePressed
 
+    private void jLayeredPaneDibujoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLayeredPaneDibujoMouseMoved
+        posMapaX = jScrollPane2.getMousePosition().x/11;
+        posMapaY = jScrollPane2.getMousePosition().y/11;
+        if(posMapaX < 80 && posMapaY < 60)  {//Esto es porque el LayeredPane es más grande que el JScrollPane
+            edificios.quitarBordeACasilla(posMapaXAntigua, posMapaYAntigua); //Quitamos el borde antiguo
+            edificios.ponerBordeACasilla(posMapaX, posMapaY); //Cambiamos el label donde está el ratón
+            posMapaXAntigua = posMapaX; //Guardamos las variables actuales en variables auxiliares
+            posMapaYAntigua = posMapaY;
+            
+        }
+    }//GEN-LAST:event_jLayeredPaneDibujoMouseMoved
+
     /*
     public void paint (Graphics g)
     {
@@ -328,6 +368,7 @@ public class EstacionPenitencia extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPaneDibujo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanelCalles;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
